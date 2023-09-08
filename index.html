@@ -338,9 +338,13 @@
             nextEl: '.kitchen-button-next',
             prevEl: '.kitchen-button-prev',
         },
+        autoplay: {
+            delay: 2000, // Delay between transitions
+        },
         spaceBetween: 50,
         direction: 'vertical', // Set the direction to vertical
         });
+
         const observer_kitchen = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -358,6 +362,9 @@
 
         var swiper_brand = new Swiper('.brand-owner', {
         spaceBetween: 50,
+        autoplay: {
+            delay: 2000, // Delay between transitions
+        },
         navigation: {
             nextEl: '.brand-button-next',
             prevEl: '.brand-button-prev',
