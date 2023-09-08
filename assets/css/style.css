@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: 'Alexandria', sans-serif;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 .container {
     width: 100%;
     padding: 0 1rem;
@@ -612,7 +614,7 @@ span.num {
 .slider-wrapper {
     width: 100vw;
     padding: clamp(1rem, calc(-0.6522rem + 6.9565vw), 5rem) 0;
-    margin: clamp(2rem, calc(1.587rem + 1.7391vw), 3rem) 0;
+    margin: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0 0;
     background-color: rgba(26, 22, 44, 1);
 }
 
@@ -694,4 +696,145 @@ span.num {
     span.num {
         display: inline;
     }
+}
+
+.increase-your-income {
+    background-color: rgb(255, 114, 20);
+}
+
+.increase-your-income {
+    background-color: rgb(255, 114, 20);
+    padding: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0;
+}
+
+.increase-your-income .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.increase-your-income .container .line {
+    width: 170px;
+    height: 5px;
+    background: #fff;
+    margin-right: 60px;
+}
+
+.increase-your-income .container h1 {
+    font-size: clamp(1.9375rem, calc(1.5503rem + 1.6304vw), 2.875rem);
+    font-weight: 700;
+    line-height: clamp(2.6875rem, calc(2.2228rem + 1.9565vw), 3.8125rem);
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+}
+
+.increase-your-income .container h1 span {
+    color: #000;
+}
+
+.increase-your-income .container img {
+    width: clamp(14.375rem, calc(9.7283rem + 19.5652vw), 25.625rem);
+    transform: translateX(-40px);
+}
+
+@media (max-width: 992px) {
+    .increase-your-income .container .line {
+        display: none
+    }
+}
+
+@media (max-width: 767.99px) {
+    .increase-your-income .container {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    .increase-your-income .container img {
+        transform: translateX(0);
+    }
+
+    .increase-your-income .container h1 {
+        text-align: center;
+    }
+}
+
+.map {
+    margin-bottom: 5rem;
+    padding: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0;
+    width: 100vw;
+    background-color: rgba(26, 22, 44, 1);
+}
+.map .container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.map .container .text h1 {
+    font-size: clamp(2.5rem, calc(1.5965rem + 3.8043vw), 4.6875rem);
+    color: #fff;
+    line-height: clamp(2.5rem, calc(1.7255rem + 3.2609vw), 4.375rem);
+    margin-bottom: clamp(1rem, calc(0.6386rem + 1.5217vw), 1.875rem);
+}
+
+.map .container .text h1 span {
+    font-size: clamp(1.4375rem, calc(0.9986rem + 1.8478vw), 2.5rem);
+    color: rgba(255, 114, 20, 1);
+}
+
+.map .container .text p {
+    font-size: clamp(0.875rem, calc(0.6685rem + 0.8696vw), 1.375rem);
+    font-weight: 400;
+    line-height: clamp(1.5625rem, calc(1.4334rem + 0.5435vw), 1.875rem);
+    letter-spacing: 0em;
+    text-align: center;
+    max-width: 500px;
+    color: #fff;
+}
+
+.map .container .text p span {
+    color: rgb(255, 114, 20)
+}
+
+.map .container .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.map .container .img img {
+    width: 100%;
+}
+
+.map .container .img .more {
+    position: absolute;
+    top: 36%;
+    right: 44%;
+}
+
+.map .container .img .more .bullet {
+    width: clamp(1.25rem, calc(0.4755rem + 3.2609vw), 3.125rem);
+    height: clamp(1.25rem, calc(0.4755rem + 3.2609vw), 3.125rem);
+    cursor: pointer;
+}
+
+.map .container .img .more .bullet:hover +.pop {
+    opacity: 1;
+}
+
+.map .container .more .pop {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: clamp(7.5rem, calc(6.7255rem + 3.2609vw), 9.375rem);
+    height: clamp(7.5rem, calc(6.7255rem + 3.2609vw), 9.375rem);
+    background: #fff;
+    border-radius: 20px 20px 20px 0;
+    opacity: 0;
+    transition: all .3s ease-in;
 }
