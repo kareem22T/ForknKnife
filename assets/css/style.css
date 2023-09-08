@@ -22,6 +22,18 @@ body {
     line-height: clamp(2.5625rem, calc(2.108rem + 1.8182vw), 3.8125rem);
     letter-spacing: 0em;
     text-align: center;
+    position: relative;
+}
+
+.section-head::after {
+    content: '';
+    width: 2.5rem;
+    height: 5px;
+    background-color: rgb(211, 51, 255);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (min-width: 576px) {
