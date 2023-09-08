@@ -339,9 +339,15 @@
             prevEl: '.kitchen-button-prev',
         },
         autoplay: {
-            delay: 2000, // Delay between transitions
+            delay: 1500, // Delay between transitions
+        },
+        effect: 'slide', // choose the desired effect (slide, fade, cube, coverflow, flip)
+        lazy: true, // enable lazy loading
+        lazy: {
+            loadPrevNext: true, // load previous and next slides
         },
         spaceBetween: 50,
+        speed: 800, // Slide transition speed (in milliseconds)
         direction: 'vertical', // Set the direction to vertical
         });
 
@@ -363,8 +369,15 @@
         var swiper_brand = new Swiper('.brand-owner', {
         spaceBetween: 50,
         autoplay: {
-            delay: 2000, // Delay between transitions
+            delay: 1500, // Delay between transitions
         },
+        effect: 'coverflow', // choose the desired effect (slide, fade, cube, coverflow, flip)
+        lazy: true, // enable lazy loading
+        lazy: {
+            loadPrevNext: true, // load previous and next slides
+        },
+        spaceBetween: 50,
+        speed: 800, // Slide transition speed (in milliseconds)
         navigation: {
             nextEl: '.brand-button-next',
             prevEl: '.brand-button-prev',
