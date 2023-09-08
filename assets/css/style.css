@@ -417,7 +417,6 @@ header .container ul a li.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
     gap: clamp(1.5rem, calc(0.9545rem + 2.1818vw), 3rem);
 }
 
@@ -490,5 +489,197 @@ header .container ul a li.active {
     .why-us-cards h4 {
         font-size: .8rem;
         white-space: nowrap;
+    }
+}
+
+.how-it-works {
+    margin-top: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem);
+}
+
+.how-it-works .container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, calc(2.2935rem + 0.8696vw), 4rem);
+    justify-content: center;
+    align-items: center;
+}
+
+.how-it-works .switch{
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    width: max-content;
+}
+.how-it-works .switch button{
+    border: none;
+    border-radius: 0;
+    color: white;
+    font-size: clamp(0.6875rem, calc(0.5068rem + 0.7609vw), 1.125rem);
+    font-weight: 500;
+    line-height: 22px;
+    padding: clamp(0.7rem, calc(0.5348rem + 0.6957vw), 1.1rem) clamp(1rem, calc(0.587rem + 1.7391vw), 2rem);
+    color: rgba(99, 96, 116, 1);
+    background-color: rgba(248, 250, 253, 1);
+    cursor: pointer;
+}
+.how-it-works .switch button.active{
+    color: #fff;
+    background-color: rgb(255, 114, 20);
+}
+
+.how-it-works .slider {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.how-it-works .swiper-slide {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-it-works .swiper-slide .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+}
+
+.how-it-works .swiper-slide .text{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    max-width: 500px;
+    min-width: 530px;
+    gap: 1rem;
+}
+
+.how-it-works .swiper-slide .num{
+    font-size: clamp(3.75rem, calc(-0.3804rem + 17.3913vw), 13.75rem);
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #fff;
+}
+
+.how-it-works .swiper-slide img{
+    max-height: clamp(11.875rem, calc(6.4538rem + 22.8261vw), 25rem);
+}
+
+.how-it-works .swiper-slide .text h1{
+    font-size: clamp(1.875rem, calc(0.8424rem + 4.3478vw), 4.375rem);
+    font-weight: 700;
+    line-height: clamp(2.5625rem, calc(1.6073rem + 4.0217vw), 4.875rem);
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+}
+.how-it-works .swiper-slide .text h1 span{
+    color: rgb(255, 114, 20);
+}
+
+.how-it-works .swiper-slide .text h1 span span{
+    font-size: clamp(1.5625rem, calc(1.0462rem + 2.1739vw), 2.8125rem);
+}
+
+.how-it-works .swiper-slide .text p{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.775);
+}
+
+.how-it-works .swiper-slide .container >div{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 3rem;
+}
+
+.slider-wrapper {
+    width: 100vw;
+    padding: clamp(1rem, calc(-0.6522rem + 6.9565vw), 5rem) 0;
+    margin: clamp(2rem, calc(1.587rem + 1.7391vw), 3rem) 0;
+    background-color: rgba(26, 22, 44, 1);
+}
+
+.brand-owner {
+    display: none;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    right: 3rem;
+    font-size: 30px;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.navigation div {
+    cursor: pointer;
+    padding: 5px;
+    background: #ffffff45;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 1199.99px) and (min-width: 767.99px) {
+    .how-it-works .swiper-slide .text h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .how-it-works .swiper-slide .num {
+        font-size: 60px;
+        color: #fff;
+    }
+    .how-it-works .swiper-slide img {
+        max-height: 250px;
+    }
+}
+@media (max-width: 992.99px) {
+    .how-it-works .slider {
+        height: 600px;
+    }
+    .how-it-works .swiper-slide .container {
+        flex-direction: column;
+    }
+}
+@media (max-width: 767.99px) {
+    .how-it-works .slider {
+        height: 640px;
+    }
+    .how-it-works .swiper-slide .container {
+        flex-direction: column;
+    }
+    .how-it-works .swiper-slide .container>div {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .how-it-works .swiper-slide .text {
+        width: auto;
+        gap: 1rem;
+        min-width: 230px;
+        max-width: 100%;
+    }
+    .navigation {
+        position: absolute;
+        top: 30px;
+        color: #fff;
+        right: 3rem;
+        font-size: 30px;
+        transform: translateY(0);
+        z-index: 999;
     }
 }
