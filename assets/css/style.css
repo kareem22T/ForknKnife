@@ -555,7 +555,7 @@ header .container ul a li.active {
     flex-direction: column;
     width: min-content;
     max-width: 500px;
-    min-width: 530px;
+    min-width: 540px;
     gap: 1rem;
 }
 
