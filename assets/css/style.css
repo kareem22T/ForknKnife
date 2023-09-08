@@ -559,7 +559,7 @@ header .container ul a li.active {
     gap: 1rem;
 }
 
-.how-it-works .swiper-slide .num{
+.how-it-works .swiper-slide h1.num{
     font-size: clamp(3.75rem, calc(-0.3804rem + 17.3913vw), 13.75rem);
     font-weight: 600;
     letter-spacing: 0px;
@@ -568,7 +568,9 @@ header .container ul a li.active {
 }
 
 .how-it-works .swiper-slide img{
-    max-height: clamp(11.875rem, calc(6.4538rem + 22.8261vw), 25rem);
+    height: clamp(11.875rem, calc(6.4538rem + 22.8261vw), 25rem);
+    width: 100%;
+    object-fit: contain;
 }
 
 .how-it-works .swiper-slide .text h1{
@@ -579,12 +581,16 @@ header .container ul a li.active {
     text-align: left;
     color: #fff;
 }
-.how-it-works .swiper-slide .text h1 span{
+.how-it-works .swiper-slide .text h1 >span:not(.num){
     color: rgb(255, 114, 20);
 }
 
-.how-it-works .swiper-slide .text h1 span span{
+.how-it-works .swiper-slide .text h1 span span:not(.num){
     font-size: clamp(1.5625rem, calc(1.0462rem + 2.1739vw), 2.8125rem);
+}
+
+span.num {
+    display: none;
 }
 
 .how-it-works .swiper-slide .text p{
@@ -658,7 +664,7 @@ header .container ul a li.active {
 }
 @media (max-width: 767.99px) {
     .how-it-works .slider {
-        height: 640px;
+        height: 600px;
     }
     .how-it-works .swiper-slide .container {
         flex-direction: column;
@@ -675,11 +681,17 @@ header .container ul a li.active {
     }
     .navigation {
         position: absolute;
-        top: 30px;
+        top: 1rem;
         color: #fff;
-        right: 3rem;
-        font-size: 30px;
+        right: 1rem;
+        font-size: 20px;
         transform: translateY(0);
         z-index: 999;
+    }
+    h1.num {
+        display: none;
+    }
+    span.num {
+        display: inline;
     }
 }
