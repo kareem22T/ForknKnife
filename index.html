@@ -127,6 +127,7 @@
             </div>
         </div>
         <div class="slider-wrapper">
+            <div class="hide-slider"></div>
             <div class="slider kitchen-owner">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -228,6 +229,7 @@
                 </div> -->
             </div>
             <div class="slider brand-owner">
+                <div class="hide-slider"></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container">
@@ -520,6 +522,8 @@
         //     nextEl: '.kitchen-button-next',
         //     prevEl: '.kitchen-button-prev',
         // },
+        // freeMode: true,
+        // freeModeMomentum: true,
         pagination: {
             el: '.kitchen-swiper-pagination',
             clickable: true,
@@ -533,7 +537,7 @@
             loadPrevNext: true, // load previous and next slides
         },
         spaceBetween: 50,
-        speed: 800, // Slide transition speed (in milliseconds)
+        speed: 500, // Slide transition speed (in milliseconds)
         direction: 'vertical', // Set the direction to vertical
         mousewheel: true,
         });
@@ -564,7 +568,6 @@
             loadPrevNext: true, // load previous and next slides
         },
         spaceBetween: 50,
-        speed: 800, // Slide transition speed (in milliseconds)
         pagination: {
             el: '.brand-swiper-pagination',
             clickable: true,
@@ -573,8 +576,9 @@
             nextEl: '.brand-button-next',
             prevEl: '.brand-button-prev',
         },
-        direction: 'vertical', // Set the direction to vertical
-        mousewheel: true,
+            speed: 500, // Slide transition speed (in milliseconds)
+            direction: 'vertical', // Set the direction to vertical
+            mousewheel: true,
         });
 
         // const observer_brand = new IntersectionObserver((entries) => {
@@ -616,7 +620,86 @@
                 prevEl: '.staff-button-prev',
             },
         });
-    
+
+        $(document).ready(function () {
+            $('.kitchen-owner').on('wheel', function (e) {
+                // Check if the swiper is on the last slide
+                if (swiper_kitchen.realIndex === swiper_kitchen.slides.length - 1) {
+                    if (e.originalEvent.deltaY > 0) {
+                        // Prevent default swiper behavior
+                        e.preventDefault();
+                        $('.hide-slider').fadeIn()
+                        var prevScrollPos = 0;
+                        $(window).scroll(function () {
+                            var currentScrollPos = $(this).scrollTop();
+                            if (currentScrollPos > prevScrollPos) {
+                                $('.hide-slider').fadeOut()
+                            }
+                            prevScrollPos = currentScrollPos;
+                        });
+                        setTimeout(() => {
+                            $('.hide-slider').fadeOut()
+                        }, 2500);
+                    }
+                }else if (swiper_kitchen.realIndex === 0) {
+                    if (e.originalEvent.deltaY < 0) {
+                        // Prevent default swiper behavior
+                        e.preventDefault();
+                        $('.hide-slider').fadeIn()
+                        var prevScrollPos = 0;
+                        $(window).scroll(function () {
+                            var currentScrollPos = $(this).scrollTop();
+                            if (currentScrollPos < prevScrollPos) {
+                                $('.hide-slider').fadeOut()
+                            }
+                            prevScrollPos = currentScrollPos;
+                        });
+                        setTimeout(() => {
+                            $('.hide-slider').fadeOut()
+                        }, 2500);
+                    }
+                }
+            });
+            $('.brand-owner').on('wheel', function (e) {
+                // Check if the swiper is on the last slide
+                if (swiper_brand.realIndex === swiper_brand.slides.length - 1) {
+                    if (e.originalEvent.deltaY > 0) {
+                        // Prevent default swiper behavior
+                        e.preventDefault();
+                        $('.hide-slider').fadeIn()
+                        var prevScrollPos = 0;
+                        $(window).scroll(function () {
+                            var currentScrollPos = $(this).scrollTop();
+                            if (currentScrollPos > prevScrollPos) {
+                                $('.hide-slider').fadeOut()
+                            }
+                            prevScrollPos = currentScrollPos;
+                        });
+                        setTimeout(() => {
+                            $('.hide-slider').fadeOut()
+                        }, 2500);
+                    }
+                }else if (swiper_brand.realIndex === 0) {
+                    if (e.originalEvent.deltaY < 0) {
+                        // Prevent default swiper behavior
+                        e.preventDefault();
+                        $('.hide-slider').fadeIn()
+                        var prevScrollPos = 0;
+                        $(window).scroll(function () {
+                            var currentScrollPos = $(this).scrollTop();
+                            if (currentScrollPos < prevScrollPos) {
+                                $('.hide-slider').fadeOut()
+                            }
+                            prevScrollPos = currentScrollPos;
+                        });
+                        setTimeout(() => {
+                            $('.hide-slider').fadeOut()
+                        }, 2500);
+                    }
+                }
+            });
+        });
+
     </script>
 
     <script>
