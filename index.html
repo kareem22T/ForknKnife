@@ -637,9 +637,6 @@
                             }
                             prevScrollPos = currentScrollPos;
                         });
-                        setTimeout(() => {
-                            $('.hide-slider').fadeOut()
-                        }, 2500);
                     }
                 }else if (swiper_kitchen.realIndex === 0) {
                     if (e.originalEvent.deltaY < 0) {
@@ -654,12 +651,35 @@
                             }
                             prevScrollPos = currentScrollPos;
                         });
-                        setTimeout(() => {
-                            $('.hide-slider').fadeOut()
-                        }, 2500);
                     }
                 }
             });
+
+            swiper_kitchen.on('slideChange', function () {
+                // Check if the swiper is on the last slide
+                if (swiper_kitchen.activeIndex === swiper_kitchen.slides.length - 1) {
+                        $('.hide-slider').fadeIn()
+                        var prevScrollPos = 0;
+                        $(window).scroll(function () {
+                            var currentScrollPos = $(this).scrollTop();
+                            if (currentScrollPos > prevScrollPos) {
+                                $('.hide-slider').fadeOut()
+                            }
+                            prevScrollPos = currentScrollPos;
+                        });
+                }else if (swiper_kitchen.realIndex === 0) {
+                    $('.hide-slider').fadeIn()
+                    var prevScrollPos = 0;
+                    $(window).scroll(function () {
+                        var currentScrollPos = $(this).scrollTop();
+                        if (currentScrollPos < prevScrollPos) {
+                            $('.hide-slider').fadeOut()
+                        }
+                        prevScrollPos = currentScrollPos;
+                    });
+                }
+            });
+
             $('.brand-owner').on('wheel', function (e) {
                 // Check if the swiper is on the last slide
                 if (swiper_brand.realIndex === swiper_brand.slides.length - 1) {
@@ -675,9 +695,6 @@
                             }
                             prevScrollPos = currentScrollPos;
                         });
-                        setTimeout(() => {
-                            $('.hide-slider').fadeOut()
-                        }, 2500);
                     }
                 }else if (swiper_brand.realIndex === 0) {
                     if (e.originalEvent.deltaY < 0) {
@@ -692,10 +709,32 @@
                             }
                             prevScrollPos = currentScrollPos;
                         });
-                        setTimeout(() => {
-                            $('.hide-slider').fadeOut()
-                        }, 2500);
                     }
+                }
+            });
+        
+            swiper_brand.on('slideChange', function () {
+                // Check if the swiper is on the last slide
+                if (swiper_brand.activeIndex === swiper_brand.slides.length - 1) {
+                    $('.hide-slider').fadeIn()
+                    var prevScrollPos = 0;
+                    $(window).scroll(function () {
+                        var currentScrollPos = $(this).scrollTop();
+                        if (currentScrollPos > prevScrollPos) {
+                            $('.hide-slider').fadeOut()
+                        }
+                        prevScrollPos = currentScrollPos;
+                    });
+                } else if (swiper_brand.activeIndex === 0) {
+                    $('.hide-slider').fadeIn()
+                    var prevScrollPos = 0;
+                    $(window).scroll(function () {
+                        var currentScrollPos = $(this).scrollTop();
+                        if (currentScrollPos < prevScrollPos) {
+                            $('.hide-slider').fadeOut()
+                        }
+                        prevScrollPos = currentScrollPos;
+                    });
                 }
             });
         });
