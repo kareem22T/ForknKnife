@@ -1235,3 +1235,119 @@ span.num {
     width: 100%;
     z-index: 999;
 }
+
+footer ul {
+    list-style: none;
+    text-align: center;
+}
+
+footer ul a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(38, 35, 52, 1);
+}
+footer .bottom {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(38, 35, 52, 1);
+}
+
+footer .container .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: clamp(3rem, calc(-0.2208rem + 5.1948vw), 4rem) 0;
+}
+
+footer .container .top .left {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.625rem, calc(-1.388rem + 3.2468vw), 1.25rem);
+}
+
+footer .container .top .left img {
+    width: 250px;
+}
+
+footer .container .top .left p {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+footer .container .top .left i {
+    font-size: 28px;
+    line-height: 22px;
+}
+
+footer .container .top .left ul {
+    display: flex;
+    gap: 50px;
+    margin-top: clamp(1.25rem, calc(-2.776rem + 6.4935vw), 2.5rem);
+}
+
+footer .container .top .right {
+    display: flex;
+    gap: clamp(1.5625rem, calc(-11.5219rem + 21.1039vw), 5.625rem);
+}
+
+footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(230, 230, 230, 1);
+    padding: clamp(1rem, calc(-2.2208rem + 5.1948vw), 2rem) 0;
+}
+
+footer .bottom ul {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 767.99px) {
+    footer .container {
+        padding: 0 30px ;
+    }
+    footer .container .top .left {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    footer .container .top {
+        flex-direction: column;
+    }
+    footer .bottom {
+        white-space: nowrap;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    footer .container .top .left p {
+        font-size: 14px;
+    }
+    footer ul a {
+        font-size: 13px;
+    }
+    footer ul a{
+        text-align: center !important;
+    }
+    footer .container .top .left ul {
+        gap: 30px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    footer .container .top .right {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
