@@ -86,7 +86,7 @@
         </div>
     </section>
 
-    <section class="why-cloud-kitchen">
+    <section class="why-cloud-kitchen" id="why">
         <div class="container">
             <h1 class="section-head">
                 <img src="./assets/imgs/logo.png">
@@ -118,18 +118,18 @@
     </section>
 
     <section class="how-it-works" id="how">
-        <div class="container">
-            <h1 class="section-head">
-                How it works in 4 easy steps
-            </h1>
-            <div class="switch">
-                <button class="active kitchen-btn">I am Kitchen owner</button>
-                <button class="brand-btn">I am food brand owner</button>
-            </div>
-        </div>
         <div class="slider-wrapper">
             <div class="hide-slider"></div>
             <div class="slider kitchen-owner">
+                <div class="head-wrapper">
+                    <h1 class="section-head">
+                        How it works in 4 easy steps
+                    </h1>
+                    <div class="switch">
+                        <button class="active kitchen-btn">I am Kitchen owner</button>
+                        <button class="brand-btn">I am food brand owner</button>
+                    </div>
+                </div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container">
@@ -230,6 +230,15 @@
                 </div> -->
             </div>
             <div class="slider brand-owner">
+                <div class="head-wrapper">
+                    <h1 class="section-head">
+                        How it works in 4 easy steps
+                    </h1>
+                    <div class="switch">
+                        <button class="active kitchen-btn">I am Kitchen owner</button>
+                        <button class="brand-btn">I am food brand owner</button>
+                    </div>
+                </div>
                 <div class="hide-slider"></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -335,7 +344,7 @@
         </div>
     </section>
 
-    <section class="increase-your-income">
+    <section class="increase-your-income" id="increase">
         <div class="container">
             <div class="line"></div>
             <h1>
@@ -701,7 +710,7 @@
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
-                            if (currentScrollPos > prevScrollPos) {
+                            if (currentScrollPos > prevScrollPos + 300) {
                                 $('.hide-slider').fadeOut()
                             }
                             prevScrollPos = currentScrollPos;
@@ -715,7 +724,7 @@
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
-                            if (currentScrollPos < prevScrollPos) {
+                            if (currentScrollPos < prevScrollPos + 300) {
                                 $('.hide-slider').fadeOut()
                             }
                             prevScrollPos = currentScrollPos;
@@ -731,7 +740,7 @@
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
-                            if (currentScrollPos > prevScrollPos) {
+                            if (currentScrollPos > prevScrollPos + 300) {
                                 $('.hide-slider').fadeOut()
                             }
                             prevScrollPos = currentScrollPos;
@@ -741,7 +750,7 @@
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
-                        if (currentScrollPos < prevScrollPos) {
+                        if (currentScrollPos < prevScrollPos + 300) {
                             $('.hide-slider').fadeOut()
                         }
                         prevScrollPos = currentScrollPos;
@@ -759,7 +768,7 @@
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
-                            if (currentScrollPos > prevScrollPos) {
+                            if (currentScrollPos > prevScrollPos + 300) {
                                 $('.hide-slider').fadeOut()
                             }
                             prevScrollPos = currentScrollPos;
@@ -773,7 +782,7 @@
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
-                            if (currentScrollPos < prevScrollPos) {
+                            if (currentScrollPos < prevScrollPos + 300) {
                                 $('.hide-slider').fadeOut()
                             }
                             prevScrollPos = currentScrollPos;
@@ -789,7 +798,7 @@
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
-                        if (currentScrollPos > prevScrollPos) {
+                        if (currentScrollPos > prevScrollPos + 300) {
                             $('.hide-slider').fadeOut()
                         }
                         prevScrollPos = currentScrollPos;
@@ -799,7 +808,7 @@
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
-                        if (currentScrollPos < prevScrollPos) {
+                        if (currentScrollPos < prevScrollPos + 300) {
                             $('.hide-slider').fadeOut()
                         }
                         prevScrollPos = currentScrollPos;
@@ -812,16 +821,16 @@
 
     <script>
         $('.kitchen-btn').on('click', function () {
-            $(this).addClass('active')
-            $(this).siblings().removeClass('active')
+            $('.kitchen-btn').addClass('active')
+            $('.kitchen-btn').siblings().removeClass('active')
             $('.brand-owner').fadeOut()
             setTimeout(() => {
                 $('.kitchen-owner').fadeIn()
             }, 350);
         })
         $('.brand-btn').on('click', function () {
-            $(this).addClass('active')
-            $(this).siblings().removeClass('active')
+            $('.brand-btn').addClass('active')
+            $('.brand-btn').siblings().removeClass('active')
             $('.kitchen-owner').fadeOut()
             setTimeout(() => {
                 $('.brand-owner').fadeIn()
@@ -852,6 +861,35 @@
                 $(this).html(titles.eq(index).html());
             });
         });
-        </script>
+
+
+        
+            let links = ['how'];
+            let isScrolledToHow = false;
+            $(window).on('scroll onload resize', function () {
+                
+                let prevScrollPos = Infinity;
+
+                for (let i = 0; i < links.length; i++) {
+                    if ($(this).scrollTop() >= $('#how').offset().top - ($(window).height() / 2) &&
+                        $(this).scrollTop() <= $('#how').offset().top + $('#how').height() - 200
+                    ) {
+                        if (!isScrolledToHow) {
+                            $('html, body').animate({
+                                scrollTop: $("#how").offset().top
+                            }, 500);
+                            isScrolledToHow = true;
+                            prevScrollPos = $('#how').offset().top
+                        }
+                    }
+                }
+                if ($(this).scrollTop() >= $('#increase').offset().top - ($(window).height() / 5)) {
+                    isScrolledToHow = false;
+                }
+                if ($(this).scrollTop() <= $('#why').offset().top / 1.2) {
+                    isScrolledToHow = false;
+                }
+            });
+    </script>
 </body>
 </html>
