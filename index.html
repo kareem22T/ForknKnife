@@ -219,7 +219,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide"></div>
                 </div>
                 <!-- Add navigation arrows -->
                 <div class="kitchen-swiper-pagination"></div>
@@ -617,20 +616,6 @@
                 prevEl: '.staff-button-prev',
             },
         });
-
-
-    $(document).ready(function () {
-        $('.kitchen-owner').on('wheel', function (e) {
-            // Check if the swiper is on the last slide
-            if (swiper_kitchen.realIndex === swiper_kitchen.slides.length -1 ) {
-                if (e.originalEvent.deltaY > 0) {
-                    // Manually perform site scrolling
-                    $('html, body').animate({ scrollTop: $(window).scrollTop() + $(window).height() }, 300);
-                }
-            }
-        });
-    });
-
     
     </script>
 
