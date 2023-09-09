@@ -1168,3 +1168,25 @@ span.num {
     margin-top: 20px;
     margin-bottom: clamp(0.625rem, calc(0.1277rem + 2.1505vw), 1.875rem);
 }
+
+.kitchen-swiper-pagination {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+}
+
+.kitchen-swiper-pagination span {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+
+.kitchen-swiper-pagination span >span:not(.num) {
+    color: rgb(255, 114, 20);
+}
