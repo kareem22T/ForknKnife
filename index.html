@@ -362,6 +362,69 @@
         </div>
     </section>
 
+    <section class="comparison">
+        <div class="container">
+            <div>
+                <div class="head">
+                    <img src="./assets/imgs/logo-complete.png" alt="">
+                    <h3>Cloud Kitchens</h3>
+                </div>
+                <ul>
+                    <li><span>No</span> initial investments</li>
+                    <li><span>No</span> rent</li>
+                    <li><span>Low</span> Operating with fork n knife</li>
+                    <li><span>No</span> management fees or human resources management hassle</li>
+                </ul>
+            </div>
+            <div style="width: clamp(5.625rem, calc(4.0761rem + 6.5217vw), 9.375rem); height: clamp(5.625rem, calc(4.0761rem + 6.5217vw), 9.375rem); font-size: clamp(1.5rem, calc(1.087rem + 1.7391vw), 2.5rem);">
+                <h1>VS.</h1>
+            </div>
+            <div>
+                <div class="head">
+                    <img src="./assets/imgs/compare.png" alt="">
+                    <h3>Traditional Restaurant</h3>
+                </div>
+                <ul>
+                    <li><span>Large</span> Initial investments</li>
+                    <li><span>High</span> Cost of Rent</li>
+                    <li>Operating Expenses are constantly <span>increasing</span></li>
+                    <li><span>Staff managing</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="brands">
+        <div class="container">
+            <div class="text">
+                <h1>
+                    <span>Who we</span>
+                    partner with?
+                </h1>
+                <p>
+                    <span>Fork N Knife</span> integrates with all major delivery platforms so that you can drive additional sales from your kitchen or
+                    micro-fulfillment center.
+                </p>
+            </div>
+            <div class="brands-slider-wrapper">
+                <div class="swiper brands-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                        <div class="swiper-slide">Slide 8</div>
+                        <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/assets/libs/swiper.js"></script>
     <script src="/assets/libs/jquery.js"></script>
     <script>
@@ -429,7 +492,12 @@
             });
 
         // Observe the swiper container
-        observer_brand.observe(document.querySelector('.brand-owner'));
+        observer_brand.observe(document.querySelector('.brands-slider'));
+
+        var swiper = new Swiper(".brands-slider", {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+        });
     </script>
 
     <script>
@@ -449,6 +517,14 @@
                 $('.brand-owner').fadeIn()
             }, 350);
         })
-    </script>
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() < 400) {
+                $('header').css('background', 'rgba(255, 255, 255, 0.24)');
+            } else {
+                $('header').css('background', '#fff');
+            }
+        });
+        </script>
 </body>
 </html>

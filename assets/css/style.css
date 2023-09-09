@@ -82,6 +82,8 @@ header {
     background: rgba(255, 255, 255, 0.24);
     border-bottom: 1px solid rgba(255, 255, 255, 1);
     backdrop-filter: blur(5px);
+    transition: background-color .3s ease-in;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 header .container {
@@ -114,7 +116,7 @@ header .container .more {
     display: none;
 }
 
-@media (max-width: 767.99px) {
+@media (max-width: 992.99px) {
     header .container ul {
         display: none;
     }
@@ -759,7 +761,6 @@ span.num {
 }
 
 .map {
-    margin-bottom: 5rem;
     padding: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0;
     width: 100vw;
     background-color: rgba(26, 22, 44, 1);
@@ -837,4 +838,97 @@ span.num {
     border-radius: 20px 20px 20px 0;
     opacity: 0;
     transition: all .3s ease-in;
+}
+
+.comparison {
+    width: 100vw;
+    background: linear-gradient(270deg, rgba(241, 240, 244, 1) 50%, rgba(242, 227, 222, 1) 50%);
+    padding: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem) 0;
+}
+
+.comparison .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;    
+}
+
+.comparison .container >div{
+    background: rgb(255, 255, 255);
+    padding: clamp(1.5rem, calc(0.8804rem + 2.6087vw), 3rem);
+    width: clamp(18.75rem, calc(14.8777rem + 16.3043vw), 28.125rem);
+    border-radius: clamp(1.875rem, calc(1.6168rem + 1.087vw), 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, calc(0.1739rem + 3.4783vw), 3rem);
+}
+
+.comparison .container >div .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comparison .container >div ul {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+}
+
+.comparison .container >div:first-child ul span{
+    color: rgba(0, 211, 57, 1);
+}
+
+.comparison .container >div:last-child ul span{
+    color: rgba(238, 75, 74, 1);
+}
+
+@media (max-width: 992.99px) {
+    .comparison {
+        background: linear-gradient(360deg, rgba(241, 240, 244, 1) 50%, rgba(242, 227, 222, 1) 50%);
+    }
+
+    .comparison .container {
+        flex-direction: column;
+    }
+
+    .comparison .container>div {
+        height: 340px;
+    }
+
+    .comparison .head {
+        gap: 10px;
+    }
+
+    .comparison .head img {
+        width: 70px;
+    }
+
+    .comparison .head h3 {
+        font-size: 1rem;
+    }
+
+    .comparison ul {
+        font-size: clamp(0.875rem, calc(0.7459rem + 0.5435vw), 1.1875rem) !important;
+        line-height: clamp(1.1875rem, calc(1.0584rem + 0.5435vw), 1.5rem)!important;
+        gap: clamp(0.625rem, calc(0.1087rem + 2.1739vw), 1.875rem) !important;
+    }
+}
+
+.brands {
+    padding: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem) 0;
+    margin-bottom: 5rem;
+    background-color: rgba(26, 22, 44, 1);
 }
