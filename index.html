@@ -394,11 +394,11 @@
         </div>
     </section>
 
-    <div class="brands">
+    <section class="brands">
         <div class="container">
             <div class="text">
                 <h1>
-                    <span>Who we</span>
+                    <span>Who we</span><br>
                     partner with?
                 </h1>
                 <p>
@@ -409,21 +409,106 @@
             <div class="brands-slider-wrapper">
                 <div class="swiper brands-slider">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                        <div class="swiper-slide">Slide 8</div>
-                        <div class="swiper-slide">Slide 9</div>
+                        <div class="swiper-slide"><img src="./assets/imgs/brand-1.png"></div>
+                        <div class="swiper-slide"><img src="./assets/imgs/brand-2.png"></div>
+                        <div class="swiper-slide"><img src="./assets/imgs/brand-3.png"></div>
+                        <div class="swiper-slide"><img src="./assets/imgs/brand-4.png"></div>
+                        <div class="swiper-slide"><h3>brand 5</h3></div>
+                        <div class="swiper-slide"><h3>brand 6</h3></div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="navigation">
+                    <div class="brands-button-prev"><i class="fa fa-angle-left"></i></div>
+                    <div class="brands-button-next"><i class="fa fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="hearing">
+        <img src="./assets/imgs/staff-after.png" class="after">
+        <div class="container">
+            <h1>
+                Hearing is <br>
+                <span>Believing</span>
+            </h1>
+            <div class="staff-slider-wrapper">
+                <div class="swiper staff-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="./assets/imgs/staff-1.png">
+                            </div>
+                            <p>
+                                Cloud kitchens can expand effortlessly to new locations, without costly real estate or construction expenses. This enables businesses to grow and meet demand, without incurring significant overheads.
+                            </p>
+                            <div>
+                                <h3>- Ahmed Hassan -</h3>
+                                <h5>Brand owner</h5>
+                            </div>
+                            <div class="bg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="./assets/imgs/staff-1.png">
+                            </div>
+                            <p>
+                                Cloud kitchens can expand effortlessly to new locations, without costly real estate or construction expenses. This enables businesses to grow and meet demand, without incurring significant overheads.
+                            </p>
+                            <div>
+                                <h3>- Ahmed Hassan -</h3>
+                                <h5>Brand owner</h5>
+                            </div>
+                            <div class="bg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="./assets/imgs/staff-1.png">
+                            </div>
+                            <p>
+                                Cloud kitchens can expand effortlessly to new locations, without costly real estate or construction expenses. This enables businesses to grow and meet demand, without incurring significant overheads.
+                            </p>
+                            <div>
+                                <h3>- Ahmed Hassan -</h3>
+                                <h5>Brand owner</h5>
+                            </div>
+                            <div class="bg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="./assets/imgs/staff-1.png">
+                            </div>
+                            <p>
+                                Cloud kitchens can expand effortlessly to new locations, without costly real estate or construction expenses. This enables businesses to grow and meet demand, without incurring significant overheads.
+                            </p>
+                            <div>
+                                <h3>- Ahmed Hassan -</h3>
+                                <h5>Brand owner</h5>
+                            </div>
+                            <div class="bg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img">
+                                <img src="./assets/imgs/staff-1.png">
+                            </div>
+                            <p>
+                                Cloud kitchens can expand effortlessly to new locations, without costly real estate or construction expenses. This enables businesses to grow and meet demand, without incurring significant overheads.
+                            </p>
+                            <div>
+                                <h3>- Ahmed Hassan -</h3>
+                                <h5>Brand owner</h5>
+                            </div>
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="staff-button-prev"><i class="fa fa-arrow-left"></i></div>
+                    <div class="staff-button-next"><i class="fa fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="/assets/libs/swiper.js"></script>
     <script src="/assets/libs/jquery.js"></script>
@@ -497,7 +582,29 @@
         var swiper = new Swiper(".brands-slider", {
             slidesPerView: "auto",
             spaceBetween: 30,
+            navigation: {
+                nextEl: '.brands-button-next',
+                prevEl: '.brands-button-prev',
+            },
         });
+
+        var staff_slider = new Swiper('.staff-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                767: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+            },
+            navigation: {
+                nextEl: '.staff-button-next',
+                prevEl: '.staff-button-prev',
+            },
+        });
+
     </script>
 
     <script>
