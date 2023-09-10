@@ -827,6 +827,11 @@
             setTimeout(() => {
                 $('.kitchen-owner').fadeIn()
             }, 350);
+            setTimeout(() => {
+                $('html, body').animate({
+                    scrollTop: $("#how").offset().top
+                }, 500);
+            }, 500);
         })
         $('.brand-btn').on('click', function () {
             $('.brand-btn').addClass('active')
@@ -843,6 +848,9 @@
                 spansBrand.each(function (index) {
                     $(this).html(titlesBrand.eq(index).html());
                 });
+                $('html, body').animate({
+                    scrollTop: $("#how").offset().top
+                }, 500);
             }, 500);
         })
 
