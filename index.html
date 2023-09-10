@@ -706,9 +706,7 @@
                     if (e.originalEvent.deltaY > 0) {
                         // Prevent default swiper behavior
                         e.preventDefault();
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
+                        $('.hide-slider').fadeIn()
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
@@ -722,10 +720,7 @@
                     if (e.originalEvent.deltaY < 0) {
                         // Prevent default swiper behavior
                         e.preventDefault();
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
-
+                        $('.hide-slider').fadeIn()
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
@@ -741,10 +736,7 @@
             swiper_kitchen.on('slideChange', function () {
                 // Check if the swiper is on the last slide
                 if (swiper_kitchen.activeIndex === swiper_kitchen.slides.length - 1) {
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
-
+                        $('.hide-slider').fadeIn()
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
@@ -754,10 +746,7 @@
                             prevScrollPos = currentScrollPos;
                         });
                 }else if (swiper_kitchen.realIndex === 0) {
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
-
+                    $('.hide-slider').fadeIn()
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
@@ -775,10 +764,7 @@
                     if (e.originalEvent.deltaY > 0) {
                         // Prevent default swiper behavior
                         e.preventDefault();
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
-
+                        $('.hide-slider').fadeIn()
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
@@ -792,10 +778,7 @@
                     if (e.originalEvent.deltaY < 0) {
                         // Prevent default swiper behavior
                         e.preventDefault();
-                        setTimeout(() => {
-                            $('.hide-slider').fadeIn()
-                        }, 500);
-
+                        $('.hide-slider').fadeIn()
                         var prevScrollPos = 0;
                         $(window).scroll(function () {
                             var currentScrollPos = $(this).scrollTop();
@@ -811,10 +794,7 @@
             swiper_brand.on('slideChange', function () {
                 // Check if the swiper is on the last slide
                 if (swiper_brand.activeIndex === swiper_brand.slides.length - 1) {
-                    setTimeout(() => {
-                        $('.hide-slider').fadeIn()
-                    }, 500);
-
+                    $('.hide-slider').fadeIn()
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
@@ -824,10 +804,7 @@
                         prevScrollPos = currentScrollPos;
                     });
                 } else if (swiper_brand.activeIndex === 0) {
-                    setTimeout(() => {
-                        $('.hide-slider').fadeIn()
-                    }, 500);
-
+                    $('.hide-slider').fadeIn()
                     var prevScrollPos = 0;
                     $(window).scroll(function () {
                         var currentScrollPos = $(this).scrollTop();
