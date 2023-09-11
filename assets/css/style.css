@@ -141,7 +141,7 @@ header .container ul a {
 
 header .container ul a span {
     padding: 5px;
-    background: rgb(255, 114, 20);
+    background: rgba(248, 136, 48, 1);
     color: #fff;
     border-radius: 5px;
     margin-right: 5px;
@@ -183,7 +183,7 @@ header .container ul a li.active {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(43, 36, 73, 1);
+    background-color: rgba(61, 56, 84, 1);
     z-index: 111;
     mix-blend-mode: screen;
 }
@@ -302,7 +302,7 @@ header .container ul a li.active {
 }
 
 .hero .container .hero-card >div:nth-child(2) a span {
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
     font-weight: 600;
 }
 
@@ -310,7 +310,7 @@ header .container ul a li.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgb(255, 114, 20);
+    background: rgba(248, 136, 48, 1);
     padding: 1.5rem;
     color: #fff;
     text-decoration: none;
@@ -528,7 +528,7 @@ header .container ul a li.active {
 }
 .how-it-works .switch button.active{
     color: #fff;
-    background-color: rgb(255, 114, 20);
+    background-color: rgba(248, 136, 48, 1);
 }
 
 .how-it-works .slider {
@@ -537,7 +537,7 @@ header .container ul a li.active {
     overflow: hidden;
     position: relative;
     height: 100vh !important;
-    background-color: rgba(26, 22, 44, 1);
+    background-color: rgba(38, 35, 52, 1);
     z-index: 999999999;
 }
 
@@ -605,7 +605,7 @@ header .container ul a li.active {
     color: #fff;
 }
 .how-it-works .swiper-slide .text h1 >span:not(.num){
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
 }
 
 .how-it-works .swiper-slide .text h1 span span:not(.num){
@@ -706,7 +706,7 @@ span.num {
 }
 
 .kitchen-swiper-pagination span>span:not(.num), .brand-swiper-pagination  span>span:not(.num){
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
 }
 
 .kitchen-swiper-pagination .num, .brand-swiper-pagination .num{
@@ -782,11 +782,11 @@ span.num {
 }
 
 .increase-your-income {
-    background-color: rgb(255, 114, 20);
+    background-color: rgba(248, 136, 48, 1);
 }
 
 .increase-your-income {
-    background-color: rgb(255, 114, 20);
+    background-color: rgba(248, 136, 48, 1);
     padding: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0;
 }
 
@@ -844,7 +844,7 @@ span.num {
 .map {
     padding: clamp(2rem, calc(1.1739rem + 3.4783vw), 4rem) 0;
     width: 100vw;
-    background-color: rgba(26, 22, 44, 1);
+    background-color: rgba(38, 35, 52, 1);
 }
 .map .container {
     display: flex;
@@ -878,7 +878,7 @@ span.num {
 }
 
 .map .container .text p span {
-    color: rgb(255, 114, 20)
+    color: rgba(248, 136, 48, 1)
 }
 
 .map .container .img {
@@ -923,94 +923,139 @@ span.num {
 
 .comparison {
     width: 100vw;
-    background: linear-gradient(270deg, rgba(241, 240, 244, 1) 50%, rgba(242, 227, 222, 1) 50%);
+    background: rgba(240, 240, 240, 1);
     padding: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem) 0;
+    position: relative;
+}
+
+.comparison >img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 95%;
+    z-index: 2;
+}
+
+@media (max-width: 767.99px) {
+    .comparison >img {
+        height: 85%;
+    }
 }
 
 .comparison .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;    
+    z-index: 4;
+    position: relative;
 }
 
-.comparison .container >div{
-    background: rgb(255, 255, 255);
-    padding: clamp(1.5rem, calc(0.8804rem + 2.6087vw), 3rem);
-    width: clamp(18.75rem, calc(14.8777rem + 16.3043vw), 28.125rem);
-    border-radius: clamp(1.875rem, calc(1.6168rem + 1.087vw), 2.5rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(1rem, calc(0.1739rem + 3.4783vw), 3rem);
+.comparison .container .head h1{
+    font-size: clamp(2.1875rem, calc(1.3172rem + 3.7634vw), 4.375rem);
+    line-height: clamp(2.75rem, calc(2.004rem + 3.2258vw), 4.625rem);
+    color: rgba(248, 136, 48, 1);
 }
 
-.comparison .container >div .head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+.comparison .container .head h1 span{
+    font-size: clamp(3.3125rem, calc(2.5665rem + 3.2258vw), 5.1875rem);
+    color: rgba(29, 27, 40, 1);
 }
 
-.comparison .container >div ul {
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
-    list-style: none;
+.comparison .container .head p {
+    font-size: clamp(0.875rem, calc(0.6761rem + 0.8602vw), 1.375rem);
+    color: rgba(29, 27, 40, 1);
+    margin: clamp(0.4375rem, calc(0.3629rem + 0.3226vw), 0.625rem) 0;
+    white-space: nowrap;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.comparison .container .head p .line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(230, 230, 230);
+    display: inline;
+    margin-left: 10px;
+}
+
+.comparison .container .head p >span{
+    color: rgba(109, 102, 153, 1);
+}
+
+.comparison .container .head p .logo{
+    color: rgba(248, 136, 48, 1);
+}
+
+.comparison table {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.comparison table p {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    gap: 30px;
     align-items: start;
+    flex-direction: column;
+    width: fit-content;
 }
 
-.comparison .container >div:first-child ul span{
-    color: rgba(0, 211, 57, 1);
+.comparison table img{
+    display: block;
 }
 
-.comparison .container >div:last-child ul span{
-    color: rgba(238, 75, 74, 1);
+.comparison tbody tr:not(:last-of-type) td,
+thead th {
+    border-bottom: 2px solid rgb(230, 230, 230);
+    text-align: left;
 }
 
-@media (max-width: 992.99px) {
-    .comparison {
-        background: linear-gradient(360deg, rgba(241, 240, 244, 1) 50%, rgba(242, 227, 222, 1) 50%);
-    }
+.comparison th,
+td {
+    text-align: left;
+    padding: clamp(0.75rem, calc(0.5013rem + 1.0753vw), 1.375rem) clamp(0.625rem, calc(-0.6183rem + 5.3763vw), 3.75rem);
+}
 
-    .comparison .container {
-        flex-direction: column;
-    }
+.comparison td:nth-child(1) {
+    font-size: clamp(0.7rem, calc(0.6204rem + 0.3441vw), 0.9rem);
+    color:rgba(29, 27, 40, 1);
+    font-weight: 300
+}
 
-    .comparison .container>div {
-        height: 340px;
-    }
+.comparison th:nth-child(2) {
+    color: rgba(109, 102, 153, 1);
+    font-size: clamp(1rem, calc(0.8011rem + 0.8602vw), 1.5rem);
+    font-weight: 700
+}
 
-    .comparison .head {
-        gap: 10px;
-    }
+.comparison th:nth-child(3) {
+    color: rgba(29, 27, 40, 1);
+    font-size: clamp(1rem, calc(0.8011rem + 0.8602vw), 1.5rem);
+    font-weight: 700
+}
 
-    .comparison .head img {
-        width: 70px;
-    }
+.comparison td:nth-child(2) {
+    color:rgba(109, 102, 153, 1);
+    font-size: clamp(0.7rem, calc(0.5806rem + 0.5161vw), 1rem);
+    font-weight: 400
+}
 
-    .comparison .head h3 {
-        font-size: 1rem;
-    }
+.comparison td:nth-child(2) span {
+    font-size: clamp(0.6rem, calc(0.5602rem + 0.172vw), 0.7rem);
+    font-weight: 300
+}
 
-    .comparison ul {
-        font-size: clamp(0.875rem, calc(0.7459rem + 0.5435vw), 1.1875rem) !important;
-        line-height: clamp(1.1875rem, calc(1.0584rem + 0.5435vw), 1.5rem)!important;
-        gap: clamp(0.625rem, calc(0.1087rem + 2.1739vw), 1.875rem) !important;
-    }
+.comparison td:nth-child(3) {
+    color:rgba(29, 27, 40, 1);
+    font-size: clamp(0.7rem, calc(0.5806rem + 0.5161vw), 1rem);
+    font-weight: 400
+}
+
+.comparison td:nth-child(3) span {
+    font-size: clamp(0.6rem, calc(0.5602rem + 0.172vw), 0.7rem);
+    font-weight: 300
 }
 
 .brands {
     padding: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem) 0;
-    background: rgb(26, 22, 44);
+    background: rgba(38, 35, 52, 1);
 }
 
 .brands .container {
@@ -1034,7 +1079,7 @@ span.num {
 }
 
 .brands .container .text h1 span{
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
 }
 
 .brands .container .text p {
@@ -1047,7 +1092,7 @@ span.num {
 }
 
 .brands .container .text p span{
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
 }
 
 .brands-slider-wrapper  {
@@ -1133,10 +1178,31 @@ span.num {
 
 .hearing .after {
     position: absolute;
-    width: 40%;
+    height: 45%;
     object-fit: cover;
     bottom: 0;
+    left: 0;
+}
+
+.hearing .before {
+    position: absolute;
+    height: 35%;
+    object-fit: cover;
+    top: 0;
     right: 0;
+}
+
+@media (max-width: 930px) {
+    .hearing .after {
+        height: auto;
+        width: 80%;
+        object-fit: contain;
+    }
+    .hearing .before {
+        height: auto;
+        width: 60%;
+        object-fit: contain;
+    }
 }
 
 .hearing * {
@@ -1144,19 +1210,32 @@ span.num {
 }
 
 .hearing .container >h1 {
-    font-size: clamp(2rem, calc(0.8065rem + 5.1613vw), 5rem);
-    font-weight: 700;
+    font-size: clamp(1.625rem, calc(1.1774rem + 1.9355vw), 2.75rem);
+    font-weight: 600;
     text-align: left;
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(-1.5rem, calc(-2.2957rem + 3.4409vw), 0.5rem);
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .hearing .container >h1 span{
-    font-size: clamp(3.125rem, calc(1.8817rem + 5.3763vw), 6.25rem);
-    font-weight: 700;
     line-height: clamp(2.8125rem, calc(2.0665rem + 3.2258vw), 4.6875rem);
     letter-spacing: 0em;
     text-align: left;
-    color: rgb(255, 114, 20);
+    color: rgba(248, 136, 48, 1);
+}
+
+@media (max-width: 930px) {
+    .hearing .container >h1 span {
+        color: #000;
+    }
+}
+
+.staff-slider {
+    padding: 20px 10px;
 }
 
 .staff-slider .swiper-slide {
@@ -1175,7 +1254,8 @@ span.num {
     height: 140px;
     overflow: hidden;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 5px solid #fff;
+    outline: 2px solid rgb(61, 56, 84);
 }
 
 .staff-slider img {
@@ -1186,12 +1266,12 @@ span.num {
 
 .staff-slider p {
     font-family: Alexandria;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
     line-height: 22px;
     letter-spacing: 0em;
     text-align: center;
-    color: rgb(91, 85, 127);
+    color: rgb(109, 102, 153);;
 }
 
 .staff-slider h3 {
@@ -1208,10 +1288,11 @@ span.num {
 .staff-slider h5 {
     font-family: Alexandria;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 17px;
     letter-spacing: 0em;
     text-align: center;
+    color: rgb(109, 102, 153);
 }
 
 .staff-slider .bg {
@@ -1220,14 +1301,21 @@ span.num {
     left: 0;
     width: 100%;
     height: calc(100% - 105px);
-    border-radius: 30px;
+    border-radius: 1rem;
     background: rgb(240, 240, 240);
     z-index: -1;
+    border: 2px solid rgba(61, 56, 84, 1);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.06);
+}
+
+.staff-slider-wrapper .navigation{
+    justify-content: end !important;
 }
 
 .staff-slider-wrapper .navigation div{
     cursor: pointer;
-    padding: 5px;
+    padding: 10px 5px;
     border-radius: 7px;
     margin: 8px 0;
     display: flex;
@@ -1237,6 +1325,17 @@ span.num {
     width: 60px;
     height: 50px;
     background: #fff;
+}
+
+.staff-slider-wrapper .navigation div:last-child{
+    border: 1px solid rgba(109, 102, 153, 1);
+    background-color: transparent;
+    color: rgba(109, 102, 153, 1);
+}
+.staff-slider-wrapper .navigation div:first-child{
+    border: 1px solid rgba(248, 136, 48, 1);
+    background-color: transparent;
+    color: rgba(248, 136, 48, 1);
 }
 
 .staff-slider-wrapper .navigation {
