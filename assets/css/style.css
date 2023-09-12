@@ -424,26 +424,11 @@ header .container ul a li.active {
 #video-player {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 110%;
     height: 90%;
-}
+    transform: translateX(-50%);}
 
-.video-wrapper:hover #video-player::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.video-wrapper:hover #video-player {
-    pointer-events: none;
-}
 
 .why-cloud-kitchen {
     margin-top: clamp(3rem, calc(2.2727rem + 2.9091vw), 5rem);
