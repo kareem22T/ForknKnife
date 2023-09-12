@@ -420,7 +420,15 @@ header .container ul a li.active {
     height: 100%;
     overflow: hidden;
 }
-
+#player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+    /* Push it behind other elements */
+}
 #video-player {
     position: absolute;
     top: 0;

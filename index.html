@@ -44,10 +44,7 @@
     
     <section class="hero">
         <div class="video-wrapper">
-            <iframe id="video-player" src="https://www.youtube.com/embed/bJn5L0Td2JQ?si=qVpvfQyljF2ISd52O&version=3&amp;enablejsapi=1&amp;html5=1&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;rel=0&amp;origin=https://yalashbab.com;&amp;controls=0&amp;playsinline=1&amp;autoplay=1&amp;loop=1"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <div id="player"></div>
         </div>
         <div class="container">
             <div class="hero-card">
@@ -1058,6 +1055,44 @@
                 $('.hide-content').fadeOut()
                 $('.register_pop_up').fadeOut()
             })
+    </script>
+    <script>
+
+    // Load the YouTube IFrame Player API
+    function loadPlayerAPI() {
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // Create and initialize the YouTube player
+    function onYouTubeIframeAPIReady() {
+        var player = new YT.Player('player', {
+            videoId: 'bJn5L0Td2JQ',
+            playerVars: {
+                autoplay: 1, // Auto play the video
+                loop: 1, // Loop the video
+                controls: 0, // Hide video controls
+                showinfo: 0, // Hide video title and uploader info
+                modestbranding: 1 // Hide YouTube logo
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    // Mute the player and start playing
+    function onPlayerReady(event) {
+        event.target.mute(); // Mute the video
+        event.target.playVideo(); // Start playing the video
+    }
+
+    // Load the YouTube Player API when the window loads
+    window.onload = function () {
+        loadPlayerAPI();
+    };
     </script>
 </body>
 </html>
