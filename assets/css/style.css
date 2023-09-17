@@ -323,6 +323,7 @@ header .container ul a li.active,  header .container ul a li:hover{
     align-items: end;
     width: 100% !important;
     border-radius: 0 !important;
+    border: none;
 }
 
 .hero .container .hero-card >div:last-child a img{
@@ -712,8 +713,8 @@ span.num {
     top: 0;
     left: 0;
     width: 82%;
-    height: 100%;
-    z-index: 999999999999999999;
+    height: 74%;
+    z-index: 1000000000;
     display: none;
 }
 
@@ -1582,31 +1583,78 @@ footer .bottom ul {
     text-align: center;
     margin-bottom: 1rem;
     color: rgb(29, 27, 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
 .register_pop_up form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
 .register_pop_up form>div {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 7px;
+    gap: 15px;
+}
+
+.register_pop_up form>div>div {
+    width: 100%;
+}
+
+.register_pop_up form label {
+    color: rgb(38, 35, 52);
+    margin-bottom: 10px;
+    display: block;
 }
 
 .register_pop_up input,
 select,
-button, .register_now {
+button, .register_now, form .radio label{
     width: 100%;
-    padding: .4rem .8rem;
-    border-radius: 10px;
+    padding: .6rem .8rem;
+    border-radius: 7px;
     border: 1px solid rgb(249, 150, 58);
     background: white;
     font-size: 1rem;
+    border: 1px solid rgba(240, 240, 240, 1);
+}
+
+.register_pop_up .radio input {
+    display: none;
+}
+
+.register_pop_up form >.radio > div:first-child {
+    justify-content: end;
+    display: flex;
+}
+
+.register_pop_up form >.radio > div:last-child {
+    justify-content: start;
+    display: flex;
+}
+
+.register_pop_up .radio label {
+    width: 80%;
+    background-color: rgba(38, 35, 52, 1);
+    color: #fff;
+    text-align: center;
+    padding: .9rem;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.register_pop_up .radio input:checked +label {
+    background-color: rgb(248, 136, 48);
+}
+
+.register_pop_up .radio {
+    margin-bottom: 30px;
 }
 
 .register_pop_up button, .register_now {
@@ -1614,6 +1662,8 @@ button, .register_now {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    width: fit-content;
+    border: none;
 }
 
 .register_now {
@@ -1627,8 +1677,9 @@ button, .register_now {
 }
 
 .cancel {
-    background-color: rgb(169, 169, 169) !important;
-    border: 1px solid rgb(169, 169, 169);
+    background-color: transparent !important;
+    border: none;
+    color: rgb(248, 136, 48) !important;
 }
 
 @media (max-width: 767.99px) {
@@ -2036,9 +2087,9 @@ main {
 }
 
 .careers_wrapper .container:nth-child(2) .body .text {
-    font-size: 18px;
+    font-size: clamp(0.8125rem, calc(0.7168rem + 0.4082vw), 1.125rem);
     font-weight: 400;
-    line-height: 25px;
+    line-height: clamp(1.375rem, calc(1.3176rem + 0.2449vw), 1.5625rem);
 }
 
 .careers_wrapper .container:nth-child(2) .content button {
@@ -2046,13 +2097,13 @@ main {
     white-space: nowrap;
     background: rgb(249, 150, 58);
     color: #fff;
-    margin: 20px 0;
+    margin: clamp(0rem, calc(-0.3827rem + 1.6327vw), 1.25rem) 0;
     padding: .6rem 2rem;
     font-size: 1.2rem;
 }
 
 .careers_wrapper .container:nth-child(2) .head h2 {
-    font-size: 24px;
+    font-size: clamp(1.25rem, calc(1.1735rem + 0.3265vw), 1.5rem);
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -2091,4 +2142,39 @@ main {
     font-size: 14px;
     margin-right: 5px;
     color: rgb(252, 180, 83);
+}
+
+@media (max-width: 1199.99px) {
+    .careers_wrapper .container {
+        padding: 0 1rem !important;
+    }
+}
+
+@media (max-width: 992.99px) {
+    .careers_wrapper .container:nth-child(2) .body {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 767.99px) {
+    .careers_wrapper form {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 575.99px) {
+    .careers_wrapper .container:nth-child(2) .head {
+        flex-direction: column;
+    }
+    .careers_wrapper .jobs {
+        padding: .5rem;
+        min-width: 100% !important;
+    }
+    .careers_wrapper .jobs .job div {
+        font-size: 9px;
+        gap: 5px;
+    }
+    .job div span {
+        font-size: 11px;
+    }
 }

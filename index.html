@@ -88,38 +88,51 @@
 
     <div class="hide-content"></div>
     <div class="register_pop_up">
-        <h1>Register Now</h1>
+        <h1>Register Now <i class="fa fa-close"></i></h1>
         <form action="">
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Name">
+            <div class="radio">
+                <div>
+                    <input type="radio" name="type" id="type_1" checked>
+                    <label for="type_1">I am Kitchen owner</label>
+                </div>
+                <div>
+                    <input type="radio" name="type" id="type_2">
+                    <label for="type_2">I am food brand owner</label>
+                </div>
             </div>
             <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
             </div>
             <div>
-                <label for="website">Website</label>
-                <input type="text" name="website" id="website" placeholder="Website">
+                <div>
+                    <label for="website">Website</label>
+                    <input type="text" name="website" id="website" placeholder="Website">
+                </div>
+                <div>
+                    <label for="Brand">Brand Name</label>
+                    <input type="text" name="Brand" id="Brand" placeholder="Brand Name">
+                </div>
             </div>
             <div>
-                <label for="type">I am a </label>
-                <select name="type" id="type">
-                    <option value="">Kitchen Owner</option>
-                    <option value="">Brand Owner</option>
-                </select>
-            </div>
-            <div>
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country" placeholder="Country">
-            </div>
-            <div>
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" placeholder="City">
-            </div>
-            <div>
-                <label for="province">Province</label>
-                <input type="text" name="province" id="province" placeholder="Province">
+                <div>
+                    <label for="country">Country</label>
+                    <input type="text" name="country" id="country" placeholder="Country">
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" placeholder="City">
+                </div>
+                <div>
+                    <label for="province">Province</label>
+                    <input type="text" name="province" id="province" placeholder="Province">
+                </div>
             </div>
             <div class="btns">
                 <button class="cancel">Cancel</button>
@@ -264,7 +277,7 @@
                                     </h1>
                                     <p>Cloud kitchens drive innovation by allowing businesses to experiment with new menu items and delivery methods without
                                     physical storefronts. This creates a dynamic food industry, shaped by online food delivery and contactless service.</p>
-                                    <a href="" class="register_now">Register Now</a>
+                                    <a href="" class="register_now" style="z-index: 1000000002;">Register Now</a>
                                 </div>
                             </div>
                             <div class="img">
@@ -385,7 +398,7 @@
                                     </h1>
                                     <p>Cloud kitchens drive innovation by allowing businesses to experiment with new menu items and delivery methods without
                                     physical storefronts. This creates a dynamic food industry, shaped by online food delivery and contactless service.</p>
-                                    <a href="" class="register_now">Register Now</a>
+                                    <a href="" class="register_now brand_owner_register" style="z-index: 1000000002;"">Register Now</a>
                                 </div>
                             </div>
                             <div class="img">
@@ -1048,9 +1061,11 @@
                 e.preventDefault()
                 $('.hide-content').fadeIn()
                 $('.register_pop_up').fadeIn()
+                if ($(this).hasClass('brand_owner_register'))
+                    $('.register_pop_up .radio #type_2 +label').trigger('click')
             })
 
-            $('.register_pop_up .cancel').on('click', function(e) {
+            $('.register_pop_up .cancel, .register_pop_up .fa-close').on('click', function(e) {
                 e.preventDefault()
                 $('.hide-content').fadeOut()
                 $('.register_pop_up').fadeOut()
