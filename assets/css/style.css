@@ -1649,6 +1649,12 @@ button, .register_now, form .radio label{
     transition: all .3s ease-in-out;
 }
 
+@media (max-width: 700px) {
+    .register_pop_up .radio label {
+        width: 100% !important;
+    }
+}
+
 .register_pop_up .radio input:checked +label {
     background-color: rgb(248, 136, 48);
 }
@@ -2177,4 +2183,35 @@ main {
     .job div span {
         font-size: 11px;
     }
+}
+
+.join_up_pop .file input {
+    display: none;
+}
+
+.join_up_pop .file label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 30px 0;
+    background: rgb(249, 251, 251);
+}
+
+.join_up_pop .file label h1 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+.join_up_pop .file label h3 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
 }
