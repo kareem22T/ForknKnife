@@ -46,6 +46,14 @@
             </div>
             <div class="more">
                 <a href="" class="show"><i class="fa fa-bars"></i></a>
+                <ul>
+                    <a href=""><li>Services</li></a>
+                    <a href=""><li>Our brands</li></a>
+                    <a href=""><li>About us</li></a>
+                    <a href=""><li>Our team</li></a>
+                    <a href=""><li>FnK academy</li></a>
+                    <a href=""><li>Blog</li></a>
+                </ul>
             </div>
         </div>
     </header>
@@ -1077,6 +1085,13 @@
                 e.preventDefault()
                 $('.hide-content').fadeOut()
                 $('.register_pop_up').fadeOut()
+            })
+
+            $('.show').on('click', function(e) {
+                e.preventDefault()
+                $(this).find('i').toggleClass('fa-bars')
+                $(this).find('i').toggleClass('fa-close')
+                $('.more').find('ul').fadeToggle()
             })
     </script>
 </body>
