@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
     <style>
+        button {
+            transition: background-color .3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: rgba(38, 35, 52, 1) !important;
+            cursor: pointer;
+        }
     </style>
     <title>ForknKnife</title>
 </head>
@@ -96,61 +104,6 @@
     </header>
 
 
-    <div class="hide-content"></div>
-    <div class="register_pop_up join_up_pop">
-        <h1>Join us <i class="fa fa-close"></i></h1>
-        <form action="">
-            <div>
-                <div>
-                    <label for="first_name">First Name</label>
-                    <input type="text" name="first_name" id="first_name" placeholder="First Name">
-                </div>
-                <div>
-                    <label for="last_name">Last Name</label>
-                    <input type="text" name="last_name" id="last_name" placeholder="Last Name">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
-                </div>
-                <div>
-                    <label for="Brand">Mobile</label>
-                    <input type="text" name="phone" id="phone" placeholder="+00 000 000 000">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="country">Country</label>
-                    <input type="text" name="country" id="country" placeholder="Country">
-                </div>
-                <div>
-                    <label for="city">City</label>
-                    <input type="text" name="city" id="city" placeholder="City">
-                </div>
-                <div>
-                    <label for="province">Province</label>
-                    <input type="text" name="province" id="province" placeholder="Province">
-                </div>
-            </div>
-            <div class="file">
-                <div>
-                    <label for="resume">
-                        <img src="./assets/imgs/upload_icon.png">
-                        <h1>Upload your resume</h1>
-                        <h3>5MB max file size</h3>
-                    </label>
-                    <input type="file" name="resume" id="resume">
-                </div>
-            </div>
-            <div class="btns">
-                <button class="cancel">Cancel</button>
-                <button>Submit</button>
-            </div>
-        </form>
-    </div>
-
     <main class="our_team_wrapper">
         <div class="container">
             <h1>
@@ -208,7 +161,7 @@
                     We are <br>looking for <br><span>talented individuals</span>
                 </h1>
                 <p>We're constantly looking for talented people to join our team. Don't hesitate to get in touch with us</p>
-                <button class="join_us">Join now</button>
+                <button>Join now</button>
             </div>
         </div>
 
@@ -301,19 +254,8 @@
 
     <script src="/assets/libs/jquery.js"></script>
     <script>
-
-        $('.join_us').on('click', function (e) {
-            e.preventDefault()
-            $('.hide-content').fadeIn()
-            $('.register_pop_up').fadeIn()
-            if ($(this).hasClass('brand_owner_register'))
-                $('.register_pop_up .radio #type_2 +label').trigger('click')
-        })
-
-        $('.register_pop_up .cancel, .register_pop_up .fa-close').on('click', function (e) {
-            e.preventDefault()
-            $('.hide-content').fadeOut()
-            $('.register_pop_up').fadeOut()
+        $('.person').on('click', function() {
+            $(this).find('.social').slideToggle()
         })
     </script>
 </body>

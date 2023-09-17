@@ -1414,11 +1414,21 @@ td {
     border: 1px solid rgba(109, 102, 153, 1);
     background-color: transparent;
     color: rgba(109, 102, 153, 1);
+    transition: all .3s ease-in;
+}
+.staff-slider-wrapper .navigation div:last-child:hover{
+    background-color:  rgba(109, 102, 153, 1);
+    color: #fff;
 }
 .staff-slider-wrapper .navigation div:first-child{
     border: 1px solid rgba(248, 136, 48, 1);
     background-color: transparent;
     color: rgba(248, 136, 48, 1);
+    transition: all .3s ease-in;
+}
+.staff-slider-wrapper .navigation div:first-child:hover{
+    background-color: rgba(248, 136, 48, 1);
+    color: #fff;
 }
 
 .staff-slider-wrapper .navigation {
@@ -1906,12 +1916,6 @@ main {
     display: flex;
 }
 
-@media (max-width: 767px) {
-    .our_team_wrapper .person .social {
-        display: flex;
-    }
-}
-
 @media (max-width: 1599.99px) {
     .our_team_wrapper .side {
         padding: 2rem 1rem;
@@ -2061,6 +2065,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .3s ease-in;
+}
+
+.careers_wrapper .nav >div:first-child:hover {
+    background-color: rgba(248, 136, 48, 1);
+    color: #fff;
 }
 
 .careers_wrapper .nav >div:last-child {
@@ -2074,6 +2084,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .3s ease-in;
+}
+.careers_wrapper .nav>div:last-child:hover {
+    background-color:  rgba(109, 102, 153, 1);
+    color: #fff;
 }
 
 .careers_wrapper .nav {
@@ -2121,7 +2136,7 @@ main {
 }
 
 .careers_wrapper .jobs {
-    padding: 1rem;
+    padding: 1rem 0;
     background: rgb(249, 251, 251);
     min-width: 390px !important;
 }
@@ -2131,6 +2146,12 @@ main {
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid rgb(240, 240, 240);
+    transition: all .3s ease-in;
+    padding: 20px 1rem;
+}
+
+.careers_wrapper .jobs .job:hover,  .careers_wrapper .jobs .job.active{
+    background-color: rgb(240, 240, 240);
 }
 
 .careers_wrapper .jobs .job div {
@@ -2138,6 +2159,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    cursor: pointer;
 }
 
 .job div span {
@@ -2158,7 +2180,7 @@ main {
 
 @media (max-width: 992.99px) {
     .careers_wrapper .container:nth-child(2) .body {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 
