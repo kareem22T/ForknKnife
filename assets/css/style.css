@@ -72,9 +72,11 @@ body {
         /* For extra large devices (992px to 1199.98px) */
     }
 }
+header:first-of-type {
+    position: fixed;
+}
 
 header {
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 999999999;
@@ -84,6 +86,9 @@ header {
     backdrop-filter: blur(5px);
     transition: background-color .3s ease-in;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+header:nth-of-type(2) {
+    opacity: 0;
 }
 
 header .container {
@@ -153,7 +158,7 @@ header .container ul a li {
     border-bottom: 4px solid rgba(255, 114, 20, 0)
 }
 
-header .container ul a li.active {
+header .container ul a li.active,  header .container ul a li:hover{
     border-bottom: 4px solid rgba(255, 114, 20, 1)
 }
 
@@ -856,14 +861,15 @@ span.num {
 .increase-your-income .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .increase-your-income .container .line {
-    width: 170px;
-    height: 5px;
+    width: 130px;
+    height: 2px;
     background: #fff;
     margin-right: 60px;
+    margin: 0 0 10px 30px;
 }
 
 .increase-your-income .container h1 {
@@ -894,6 +900,7 @@ span.num {
     .increase-your-income .container {
         flex-direction: column-reverse;
         gap: 2rem;
+        align-items: center;
     }
     .increase-your-income .container img {
         transform: translateX(0);
@@ -1632,4 +1639,456 @@ button, .register_now {
     .register_pop_up form {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+/* start about us  */
+main {
+    margin-top: clamp(2rem, calc(1.6022rem + 1.7204vw), 3rem);
+}
+
+.about_wrapper .container, .our_team_wrapper .container {
+    padding: 0 clamp(1rem, calc(-1.3871rem + 10.3226vw), 7rem);
+}
+
+.about_wrapper h1, .our_team_wrapper .container >h1 {
+    font-size: clamp(2.1875rem, calc(1.9388rem + 1.0753vw), 2.8125rem);
+    font-weight: 600;
+    line-height: clamp(2.5rem, calc(2.2513rem + 1.0753vw), 3.125rem);
+    padding-bottom: 10px;
+    position: relative;
+    width: fit-content;
+}
+
+.about_wrapper h1::after,
+.our_team_wrapper .container > h1::after {
+    content: '';
+    width: 20%;
+    bottom: 0px;
+    left: 0;
+    height: 4px;
+    background-color: rgb(248, 136, 48);
+    position: absolute;
+}
+
+.about_wrapper h1 span,
+.our_team_wrapper h1 span {
+    font-size: clamp(1.75rem, calc(1.5013rem + 1.0753vw), 2.375rem);
+}
+
+.about_wrapper .questions {
+    margin-top: clamp(0.5rem, calc(-0.6935rem + 5.1613vw), 3.5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.about_wrapper .question {
+    padding: 0 1rem;
+    border-bottom: 1px solid rgba(240, 240, 240, 1);
+    cursor: pointer;
+}
+
+.about_wrapper .question .head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: clamp(1rem, calc(0.8011rem + 0.8602vw), 1.5rem) 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(29, 27, 40);
+}
+
+.about_wrapper .question .head button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+    color: rgb(230, 230, 230);
+    border-color: rgb(230, 230, 230);
+}
+
+.about_wrapper .question .head button .fa-minus{
+    display: none;
+}
+
+.about_wrapper .question .head button.maximized .fa-minus{
+    display: block;
+}
+
+.about_wrapper .question .head button.maximized .fa-plus{
+    display: none;
+}
+
+.about_wrapper .question .head button.maximized{
+    color: rgba(252, 180, 83, 1);
+    border-color: rgba(252, 180, 83, 1);
+}
+
+.about_wrapper .answer {
+    padding: 1rem 0 2rem;
+    gap: 12px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    color: #6D6699;
+    display: none;
+}
+
+.about_wrapper .prev {
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.about_wrapper .prev img {
+    width: 100%;
+}
+
+.our_team_wrapper .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.our_team_wrapper .team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+
+.our_team_wrapper .text {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 90%;
+    background-color: rgba(29, 27, 40, 0.7);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: clamp(0.8125rem, calc(0.5084rem + 1.2973vw), 1.5625rem);
+    transition: all .5s ease-in-out;
+    white-space: nowrap;
+    line-height: clamp(1.875rem, calc(1.6216rem + 1.0811vw), 2.5rem);
+}
+
+.our_team_wrapper .text::after {
+    content: '';
+    position: absolute;
+    height: clamp(0.125rem, calc(0.049rem + 0.3243vw), 0.3125rem);
+    width: clamp(1.25rem, calc(0.7432rem + 2.1622vw), 2.5rem);
+    background-color: #fff;
+    bottom: 15px;
+    right: clamp(-0.625rem, calc(-0.3716rem + -1.0811vw), -1.25rem);
+    transition: all .5s ease-in-out;
+}
+
+.our_team_wrapper h1 {
+    grid-column: span 3;
+}
+
+.our_team_wrapper .person {
+    width: 100%;
+    border-radius: .5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.our_team_wrapper .person img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.our_team_wrapper .person:hover img{
+    transform: scale(1.05);
+    filter: blur(2px);
+}
+
+.our_team_wrapper .person:hover .text::after{
+    bottom: 90%;
+}
+
+.our_team_wrapper .person:hover .text{
+    background-color: rgba(248, 135, 48, 0.819);
+}
+.our_team_wrapper .person:hover .text span{
+    color: #131313;
+}
+
+.our_team_wrapper .person .text span {
+    color: rgb(252, 180, 83);
+    font-size: clamp(0.7rem, calc(0.5784rem + 0.5189vw), 1rem);
+    font-weight: 400;
+}
+
+.our_team_wrapper .side {
+    height: fit-content;
+    border-radius: .5rem;
+    background: rgb(252, 249, 247);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    min-height: calc(50% - .5rem);
+    padding: 4rem 3rem;
+}
+
+.our_team_wrapper .social{
+    display: flex;
+    gap: 10px;
+    display: none;
+}
+
+.our_team_wrapper .social i{
+    color: #fff;
+}
+
+.our_team_wrapper .person:hover .social {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .our_team_wrapper .person .social {
+        display: flex;
+    }
+}
+
+@media (max-width: 1599.99px) {
+    .our_team_wrapper .side {
+        padding: 2rem 1rem;
+    }
+}
+
+.our_team_wrapper .side h1 {
+    font-size: 36px;
+    color: rgb(248, 136, 48);
+    line-height: 1;
+    font-weight: 600;
+}
+
+.our_team_wrapper .side h1 span {
+    color: rgb(38, 35, 52);
+    font-size: clamp(1.625rem, calc(-0.4139rem + 3.2787vw), 2.25rem);
+}
+
+.our_team_wrapper .side p {
+    font-size: clamp(0.8125rem, calc(0.5638rem + 1.0612vw), 1.25rem);
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.our_team_wrapper .side button {
+    background: rgb(248, 136, 48);
+    color: #fff;
+    width: fit-content;
+    padding: .5rem 2rem;
+}
+
+@media (max-width: 992.99px) {
+    .our_team_wrapper .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.all_about {
+    position: relative;
+    margin-top: 4rem;
+    height: clamp(10.625rem, calc(6.2245rem + 18.7755vw), 25rem);
+}
+
+.all_about img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.all_about .card {
+    position: absolute;
+    top: -2rem;
+    right: 25%;
+    font-size: clamp(2.1875rem, calc(1.5753rem + 2.6122vw), 4.1875rem);
+    line-height: clamp(2.5rem, calc(1.7347rem + 3.2653vw), 5rem);
+    padding: clamp(1rem, calc(0.3878rem + 2.6122vw), 3rem);
+    background: rgba(252, 180, 83, 0.84);
+    color: #fff;
+}
+@media (max-width: 992.99px) {
+    .all_about .card {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+.all_about .card span {
+    font-size: clamp(2.8125rem, calc(2.0472rem + 3.2653vw), 5.3125rem);
+    color: rgba(38, 35, 52, 1);
+}
+
+.careers_wrapper form{
+    padding: 2rem;
+    background: rgb(249, 251, 251);
+    border-radius: .7rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
+.careers_wrapper form>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.careers_wrapper form label {
+    font-size: .9rem;
+}
+
+.careers_wrapper form input, .careers_wrapper form select {
+    border: 1px solid rgb(240, 240, 240);
+    padding: .7rem;
+    font-size: .8rem;
+    border-radius: .5rem;
+    color: rgb(140, 140, 140);
+}
+
+.careers_wrapper form input:focus, .careers_wrapper form select:focus {
+    outline: 1px solid rgb(249, 150, 58);
+
+}
+
+.careers_wrapper form button {
+    width: fit-content;
+    white-space: nowrap;
+    background: rgb(249, 150, 58);
+    color: #fff;
+}
+
+.careers_wrapper .container:nth-child(2) {
+    margin-top: 3rem;
+}
+
+.careers_wrapper .container:nth-child(2) .head {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.careers_wrapper .container:nth-child(2) .head .details {
+    font-size: 16px;
+    color: rgb(38, 35, 52);
+    font-weight: 400;
+}
+
+.careers_wrapper .container:nth-child(2) .head .details span {
+    color: rgb(109, 102, 153);
+    font-size: 14px;
+}
+
+.careers_wrapper .nav >div:first-child {
+    border: 1px solid rgba(248, 136, 48, 1);
+    background-color: transparent;
+    color: rgba(248, 136, 48, 1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.careers_wrapper .nav >div:last-child {
+    border: 1px solid rgba(109, 102, 153, 1);
+    background-color: transparent;
+    color: rgba(109, 102, 153, 1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.careers_wrapper .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.careers_wrapper .container:nth-child(2) .body {
+    display: flex;
+    gap: 20px;
+}
+
+.careers_wrapper .container:nth-child(2) .body .jobs {
+    min-width: 350px;
+}
+
+.careers_wrapper .container:nth-child(2) .body .text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.careers_wrapper .container:nth-child(2) .content button {
+    width: fit-content;
+    white-space: nowrap;
+    background: rgb(249, 150, 58);
+    color: #fff;
+    margin: 20px 0;
+    padding: .6rem 2rem;
+    font-size: 1.2rem;
+}
+
+.careers_wrapper .container:nth-child(2) .head h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.careers_wrapper .container:nth-child(2) .head p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.careers_wrapper .jobs {
+    padding: 1rem;
+    background: rgb(249, 251, 251);
+    min-width: 390px !important;
+}
+
+.careers_wrapper .jobs .job {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.careers_wrapper .jobs .job div {
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.job div span {
+    font-size: 14px;
+}
+
+.job p i {
+    font-size: 14px;
+    margin-right: 5px;
+    color: rgb(252, 180, 83);
 }
