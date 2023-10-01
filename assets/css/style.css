@@ -565,6 +565,7 @@ header .container ul a li.active,  header .container ul a li:hover{
     overflow: hidden;
     width: max-content;
     gap: 10px;
+    z-index: 999;
 }
 .how-it-works .switch button{
     border: none;
@@ -583,7 +584,7 @@ header .container ul a li.active,  header .container ul a li:hover{
     height: clamp(3.125rem, calc(2.6277rem + 2.1505vw), 4.375rem);
 }
 
-.how-it-works .switch button .btn-img {
+.how-it-works .switch button svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -591,28 +592,13 @@ header .container ul a li.active,  header .container ul a li:hover{
     height: 100%;
     transition: opacity .3 ease-in;
     z-index: -1;
+    fill: #262334;
+    transition: fill .3s ease-in-out;
 }
 
-.how-it-works .switch button .btn-img-active {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity .3 ease-in;
-    z-index: -1;
-}
 
-.how-it-works .switch button .btn-img-active {
-    opacity: 0;
-}
-
-.how-it-works .switch button.active .btn-img {
-    opacity: 0;
-}
-
-.how-it-works .switch button.active .btn-img-active {
-    opacity: 1;
+.how-it-works .switch button.active svg {
+    fill: #F88830;
 }
 
 .how-it-works .switch button.active{
@@ -621,12 +607,10 @@ header .container ul a li.active,  header .container ul a li:hover{
 
 .how-it-works .slider {
     width: 100%;
-    height: 450px;
     overflow: hidden;
     position: relative;
-    height: 100vh !important;
+    height: 580px !important;
     background-color: rgba(38, 35, 52, 1);
-    z-index: 999999999;
 }
 
 .head-wrapper {
@@ -636,19 +620,14 @@ header .container ul a li.active,  header .container ul a li:hover{
     gap: 40px;
     width: 100vw;
     background: #fff;
-    padding: 10px 0 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5555555;
+    padding: 10px 0 0;
 }
 
 .how-it-works .swiper-slide {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: end;
-    padding-bottom: 15vh;
+    align-items: center;
     padding-right: 290px;
 }
 
@@ -766,24 +745,20 @@ span.num {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    right: 3rem !important;
+    right: 4rem !important;
     display: flex !important;
     flex-direction: column !important;
     left: auto !important;
     gap: 5px !important;
-    padding-top: 25vh;
     z-index: 99999;
     max-width: 200px;
-}
-
-.kitchen-swiper-pagination span.swiper-pagination-bullet-active, .brand-swiper-pagination span.swiper-pagination-bullet-active{
-    transform: scale(1.1);
+    
 }
 
 .kitchen-swiper-pagination span, .brand-swiper-pagination span {
-    font-size: 17px;
+    font-size: 35px;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
@@ -791,8 +766,14 @@ span.num {
     height: auto;
     background-color: transparent;
     transition: all .3s ease-in;
+    opacity: .8;
 }
-
+.kitchen-swiper-pagination span.swiper-pagination-bullet-active,
+.brand-swiper-pagination span.swiper-pagination-bullet-active {
+    transform: scale(1.1);
+    color: #F88830 !important;
+    opacity: 1;
+}
 .kitchen-swiper-pagination span>span:not(.num), .brand-swiper-pagination  span>span:not(.num){
     color: rgba(248, 136, 48, 1);
 }
@@ -831,7 +812,7 @@ span.num {
 }
 @media (max-width: 767.99px) {
     .how-it-works .slider {
-        height: 600px;
+        height: 780px !important;
     }
     .how-it-works .swiper-slide {
         padding: 0 0 7vh 0;
@@ -866,6 +847,12 @@ span.num {
     }
     span.num {
         display: inline;
+    }
+}
+
+@media (max-width: 676.98px) {
+    .how-it-works .slider {
+        height: 720px !important;
     }
 }
 
@@ -1100,7 +1087,12 @@ thead th {
 .comparison th,
 td {
     text-align: left;
-    padding: clamp(0.75rem, calc(0.5013rem + 1.0753vw), 1.375rem) clamp(0.625rem, calc(-0.6183rem + 5.3763vw), 3.75rem);
+    padding: clamp(0.75rem, calc(0.5013rem + 1.0753vw), 1.375rem) clamp(0.875rem, calc(0.3429rem + 2.2703vw), 2.1875rem);;
+}
+
+.comparison .table_wrapper {
+    max-width: 100%;
+    overflow: auto;
 }
 
 .comparison td:nth-child(1) {
@@ -1116,6 +1108,12 @@ td {
 }
 
 .comparison th:nth-child(3) {
+    color: rgba(29, 27, 40, 1);
+    font-size: clamp(1rem, calc(0.8011rem + 0.8602vw), 1.5rem);
+    font-weight: 700
+}
+
+.comparison th:nth-child(4) {
     color: rgba(29, 27, 40, 1);
     font-size: clamp(1rem, calc(0.8011rem + 0.8602vw), 1.5rem);
     font-weight: 700
@@ -1139,6 +1137,10 @@ td {
 }
 
 .comparison td:nth-child(3) span {
+    font-size: clamp(0.6rem, calc(0.5602rem + 0.172vw), 0.7rem);
+    font-weight: 300
+}
+.comparison td:nth-child(4) span {
     font-size: clamp(0.6rem, calc(0.5602rem + 0.172vw), 0.7rem);
     font-weight: 300
 }
@@ -1594,17 +1596,20 @@ footer .bottom ul {
     display: none;
 }
 
-.register_pop_up {
+.register_pop_up, .pop_up {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99999999999999999;
     background: white;
-    padding: 1.5rem;
+    padding: clamp(1rem, calc(0.7973rem + 0.8649vw), 1.5rem);
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     display: none;
+    width: 90%;
+    max-width: fit-content;
+    min-width: 350px
 }
 
 .register_pop_up h1 {
@@ -1736,6 +1741,13 @@ main {
     padding: 0 clamp(1rem, calc(-1.3871rem + 10.3226vw), 7rem);
 }
 
+@media (max-width: 1199px) {
+    .about_wrapper .container,
+    .our_team_wrapper .container {
+        padding: 0 1rem !important;
+    }
+}
+
 .about_wrapper h1, .our_team_wrapper .container >h1 {
     font-size: clamp(2.1875rem, calc(1.9388rem + 1.0753vw), 2.8125rem);
     font-weight: 600;
@@ -1829,17 +1841,31 @@ main {
     width: 100%;
 }
 
-.our_team_wrapper .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+.our_team_wrapper .team_wrapper {
+    margin: clamp(0rem, calc(-1.2162rem + 5.1892vw), 3rem) 0;
+}
+
+.our_team_wrapper .team_wrapper >h3 {
+    font-family: Alexandria;
+    font-size: clamp(1.125rem, calc(0.8716rem + 1.0811vw), 1.75rem);
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: clamp(0.5rem, calc(0.2973rem + 0.8649vw), 1rem);
 }
 
 .our_team_wrapper .team {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     position: relative;
+}
+
+@media (max-width: 767.98px) {
+    .our_team_wrapper .team {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .our_team_wrapper .text {
@@ -1878,6 +1904,39 @@ main {
     border-radius: .5rem;
     overflow: hidden;
     position: relative;
+}
+
+.our_team_wrapper .join-us-card {
+    width: 100%;
+    border-radius: .5rem;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(250, 250, 250, 1);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.our_team_wrapper .join-us-card:hover button {
+    background-color: rgb(248, 136, 48) !important;
+    color: #fff;
+}
+
+.our_team_wrapper .join-us-card img {
+    width: 80%;
+    max-width: 200px;
+}
+
+.our_team_wrapper .join-us-card button {
+    border: 1px solid rgba(248, 136, 48, 1);
+    width: fit-content;
+    color: rgb(248, 136, 48);
+    padding: .5rem 2rem;
+    background-color: transparent;
 }
 
 .our_team_wrapper .person img {
@@ -1968,6 +2027,53 @@ main {
     padding: .5rem 2rem;
 }
 
+.team_pop_up h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: Alexandria;
+    font-size: clamp(1.125rem, calc(0.9476rem + 0.7568vw), 1.5625rem);
+    font-weight: 600;
+    line-height: clamp(0.875rem, calc(0.6216rem + 1.0811vw), 1.5rem);
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgb(38, 35, 52);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.team_pop_up h1 span {
+    font-family: Alexandria;
+    font-size: clamp(0.8125rem, calc(0.7618rem + 0.2162vw), 0.9375rem);
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgb(252, 180, 83);
+}
+
+.team_pop_up p {
+    font-family: Alexandria;
+    font-size: clamp(0.625rem, calc(0.5236rem + 0.4324vw), 0.875rem);
+    font-weight: 400;
+    line-height: clamp(1.0625rem, calc(0.8345rem + 0.973vw), 1.625rem);
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 10px;
+    color: rgba(38, 35, 52, 1);
+}
+
+.team_pop_up hr {
+    border: none;
+    background: rgb(240, 240, 240);
+    height: 1px;
+}
+
+.team_pop_up .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
 @media (max-width: 992.99px) {
     .our_team_wrapper .container {
         display: flex;
@@ -1978,7 +2084,7 @@ main {
 
 .all_about {
     position: relative;
-    margin-top: 4rem;
+    margin-top: clamp(4rem, calc(3.1892rem + 3.4595vw), 6rem);
     height: clamp(10.625rem, calc(6.2245rem + 18.7755vw), 25rem);
 }
 

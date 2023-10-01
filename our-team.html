@@ -118,59 +118,76 @@
                 Our Team <br>
                 <span>We’re here to help</span>
             </h1>
-            <div class="team">
-                <div class="person">
-                    <img src="./assets/imgs/team-1.png" alt="">
-                    <div class="text">
-                        Majed Ahmed
-                        <span>MCR Section</span>
-                        <div class="social">
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            <a href=""><i class="fa-regular fa-envelope"></i></a>
+            <div class="team_wrapper">
+                <h3>Co-founder</h3>
+                <div class="team">
+                    <div class="person">
+                        <img src="./assets/imgs/team-1.png" alt="">
+                        <div class="text">
+                            Yasser Nasr Aldin
+                            <span>MCR Section</span>
+                            <div class="social">
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="person">
-                    <img src="./assets/imgs/team-2.png" alt="">
-                    <div class="text">
-                        Ismaeel Abdul’aziz
-                        <span>CX Manager</span>
-                        <div class="social">
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            <a href=""><i class="fa-regular fa-envelope"></i></a>
+                    <div class="person">
+                        <img src="./assets/imgs/team-2.png" alt="">
+                        <div class="text">
+                            yaser M. Foad
+                            <span>MCR Manager</span>
+                            <div class="social">
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="person">
-                    <img src="./assets/imgs/team-3.png" alt="">
-                    <div class="text">
-                        Ismaeel Abdul’aziz
-                        <span>MCR Manager</span>
-                        <div class="social">
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            <a href=""><i class="fa-regular fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="person">
-                    <img src="./assets/imgs/team-4.png" alt="">
-                    <div class="text">
-                        yaser M. Foad
-                        <span>MCR Manager</span>
-                        <div class="social">
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                            <a href=""><i class="fa-regular fa-envelope"></i></a>
+                    <div class="person">
+                        <img src="./assets/imgs/team-4.png" alt="">
+                        <div class="text">
+                            Ismaeel Abdul’aziz
+                            <span>MCR Manager</span>
+                            <div class="social">
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="side">
-                <h1>
-                    We are <br>looking for <br><span>talented individuals</span>
-                </h1>
-                <p>We're constantly looking for talented people to join our team. Don't hesitate to get in touch with us</p>
-                <button>Join now</button>
+            <div class="team_wrapper">
+                <h3>First team</h3>
+                <div class="team">
+                    <div class="person">
+                        <img src="./assets/imgs/team-5.png" alt="">
+                        <div class="text">
+                            Ismaeel Abdul’aziz
+                            <span>CX Manager</span>
+                            <div class="social">
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="./assets/imgs/team-3.png" alt="">
+                        <div class="text">
+                            Ismaeel Abdul’aziz
+                            <span>MCR Manager</span>
+                            <div class="social">
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="join-us-card">
+                        <img src="./assets/imgs/default_person.png" alt="">
+                        <button>Join us</button>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <section class="all_about">
@@ -180,6 +197,27 @@
                 <span>Proximity</span>
             </div>
         </section>
+
+        <div class="hide-content"></div>
+        <div class="pop_up team_pop_up">
+            <h1>
+                Yasser Nasr Aldin
+                <span>MCR Section</span>
+            </h1>
+            <div class="close">
+                <i class="fa fa-close"></i>
+            </div>
+            <hr>
+            <p>
+                Meet Yasser Nasr Aldin, the Co-founder and CEO of Fork N Knife. With a remarkable 18 years of experience in the technology domain, Yasser's expertise is a driving force behind our company's success.<br><br>
+
+                Yasser brings a wealth of knowledge to the table, with 9 of those years dedicated to the dynamic world of cloud kitchens. His deep understanding of this emerging industry ensures that Fork N Knife is at the forefront of innovation, delivering exceptional solutions for our clients.<br><br>
+
+                But Yasser's journey doesn't stop there. With 14 years of experience in the tech startup landscape, he has honed his skills in strategy development, financial planning, fundraising, startups acquisitions, and due diligence processes. Yasser's strategic vision and ability to navigate complex financial landscapes have been instrumental in Fork N Knife's growth and sustainability.<br><br>
+
+                As our CEO, Yasser is committed to delivering excellence, driving innovation, and ensuring that every client's needs are not only met but exceeded. With his leadership, we are dedicated to providing cutting-edge solutions that make a difference in the technology and cloud kitchen sectors.<br><br>
+            </p>
+        </div>
     </main>
 
     <footer>
@@ -264,7 +302,15 @@
     <script>
         $('.person').on('click', function() {
             $(this).find('.social').slideToggle()
+            $('.team_pop_up').fadeIn()
+            $('.hide-content').fadeIn()
         })
+
+        $('.hide-content, .close').on('click', function() {
+            $('.team_pop_up').fadeOut()
+            $('.hide-content').fadeOut()
+        })
+
         $('.show').on('click', function (e) {
             e.preventDefault()
             $(this).find('i').toggleClass('fa-bars')
