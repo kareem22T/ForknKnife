@@ -606,10 +606,9 @@ header .container ul a li.active,  header .container ul a li:hover{
 }
 
 .how-it-works .slider {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     position: relative;
-    height: 580px !important;
     background-color: rgba(38, 35, 52, 1);
 }
 
@@ -628,7 +627,11 @@ header .container ul a li.active,  header .container ul a li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 290px;
+    height: 580px !important;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg, rgba(242, 227, 222, 0) 0%, rgba(38, 35, 52, 1) 20%, rgba(38, 35, 52, 1) 80%, rgba(241, 240, 244, 0) 100%);
+    transform: all .3s ease-in-out;
 }
 
 .how-it-works .swiper-slide .container {
@@ -801,7 +804,7 @@ span.num {
 }
 @media (max-width: 992.99px) {
     .how-it-works .slider {
-        height: 650px;
+        height: 650px !important;
     }
     .how-it-works .swiper-slide {
         padding: 0 0 0 0;
@@ -811,11 +814,10 @@ span.num {
     }
 }
 @media (max-width: 767.99px) {
-    .how-it-works .slider {
-        height: 780px !important;
-    }
     .how-it-works .swiper-slide {
-        padding: 0 0 7vh 0;
+        height: 700px !important;
+        background: rgb(242, 227, 222);
+        background: linear-gradient(0deg, rgba(242, 227, 222, 0) 0%, rgba(38, 35, 52, 1) 6%, rgba(38, 35, 52, 1) 93%, rgba(241, 240, 244, 0) 100%);
     }
     .kitchen-swiper-pagination, .brand-swiper-pagination {
         display: none !important;
@@ -847,12 +849,6 @@ span.num {
     }
     span.num {
         display: inline;
-    }
-}
-
-@media (max-width: 676.98px) {
-    .how-it-works .slider {
-        height: 720px !important;
     }
 }
 
@@ -2372,4 +2368,9 @@ footer a {
 
 footer a:hover {
     color: rgb(248, 136, 48) !important;
+}
+
+section:not(.how) {
+    position: relative;
+    z-index: 20;
 }
