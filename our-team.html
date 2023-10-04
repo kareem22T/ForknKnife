@@ -121,7 +121,7 @@
             <div class="team_wrapper">
                 <h3>Co-founder</h3>
                 <div class="team">
-                    <div class="person">
+                    <div class="person main_person">
                         <img src="./assets/imgs/team-1.png" alt="">
                         <div class="text">
                             Yasser Nasr Aldin
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="person">
+                    <div class="person main_person">
                         <img src="./assets/imgs/team-2.png" alt="">
                         <div class="text">
                             yaser M. Foad
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="person">
+                    <div class="person main_person">
                         <img src="./assets/imgs/team-4.png" alt="">
                         <div class="text">
                             Ismaeel Abdul’aziz
@@ -302,6 +302,8 @@
     <script>
         $('.person').on('click', function() {
             $(this).find('.social').slideToggle()
+        })
+        $('.main_person').on('click', function() {
             $('.team_pop_up').fadeIn()
             $('.hide-content').fadeIn()
         })
