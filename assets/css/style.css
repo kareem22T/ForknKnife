@@ -1272,7 +1272,6 @@ td {
 
 .hearing {
     padding: clamp(2rem, calc(0.7609rem + 5.2174vw), 5rem) 0;
-    margin-bottom: 5rem;
     background: rgba(249, 251, 251, 1);
     position: relative;
 }
@@ -1476,6 +1475,11 @@ td {
     top: 0;
     width: 100%;
     z-index: 999;
+}
+footer {
+    background: #fff;
+    z-index: 999;
+    position: relative;
 }
 
 footer ul {
