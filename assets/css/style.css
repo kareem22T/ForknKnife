@@ -627,10 +627,10 @@ header .container ul a li.active,  header .container ul a li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 580px !important;
+    height: 420px !important;
     position: absolute;
     top: 0;
-    background: linear-gradient(0deg, rgba(242, 227, 222, 0) 0%, rgba(38, 35, 52, 1) 20%, rgba(38, 35, 52, 1) 80%, rgba(241, 240, 244, 0) 100%);
+    background: linear-gradient(0deg, rgba(242, 227, 222, 0) 0%, rgba(38, 35, 52, 1) 6%, rgba(38, 35, 52, 1) 93%, rgba(241, 240, 244, 0) 100%);
     transform: all .3s ease-in-out;
 }
 
@@ -660,16 +660,15 @@ header .container ul a li.active,  header .container ul a li:hover{
 }
 
 .how-it-works .swiper-slide img{
-    height: clamp(11.875rem, calc(6.4538rem + 22.8261vw), 25rem);
+    height: clamp(10rem, calc(5.9459rem + 17.2973vw), 20rem);
     width: 100%;
     object-fit: contain;
 }
 
 .how-it-works .swiper-slide .text h1{
-    font-size: clamp(1.875rem, calc(0.8424rem + 4.3478vw), 4.375rem);
     font-size: clamp(1.87rem, calc(1.4602rem + 1.772vw), 2.9rem);
     font-weight: 700;
-    line-height: clamp(2.5625rem, calc(2.3089rem + 1.0968vw), 3.2rem);
+    line-height: clamp(2.1rem, calc(1.6541rem + 1.9027vw), 3.2rem);
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
@@ -815,7 +814,7 @@ span.num {
 }
 @media (max-width: 767.99px) {
     .how-it-works .swiper-slide {
-        height: 700px !important;
+        height: 480px !important;
         background: rgb(242, 227, 222);
         background: linear-gradient(0deg, rgba(242, 227, 222, 0) 0%, rgba(38, 35, 52, 1) 6%, rgba(38, 35, 52, 1) 93%, rgba(241, 240, 244, 0) 100%);
     }
@@ -1132,6 +1131,12 @@ td {
     font-weight: 400
 }
 
+.comparison td:nth-child(4) {
+    color:rgba(29, 27, 40, 1);
+    font-size: clamp(0.7rem, calc(0.5806rem + 0.5161vw), 1rem);
+    font-weight: 400
+}
+
 .comparison td:nth-child(3) span {
     font-size: clamp(0.6rem, calc(0.5602rem + 0.172vw), 0.7rem);
     font-weight: 300
@@ -1214,24 +1219,24 @@ td {
     margin-right: clamp(0.625rem, calc(-0.0204rem + 2.7174vw), 2.1875rem) !important;
 }
 
-.brands-slider-wrapper .swiper-slide:nth-child(2) {
+.brands-slider-wrapper .swiper-slide.slide_2 {
     background-color: rgba(96, 67, 148, 1);
 }
 
-.brands-slider-wrapper .swiper-slide:nth-child(4) {
+.brands-slider-wrapper .swiper-slide.slide_4 {
     background-color: rgba(247, 146, 57, 1);
 }
-.brands-slider-wrapper .swiper-slide:nth-child(6) {
+.brands-slider-wrapper .swiper-slide.slide_6 {
     background-color: rgba(253, 187, 20, 1);
 }
 
-.brands-slider-wrapper .swiper-slide:nth-child(7) {
+.brands-slider-wrapper .swiper-slide.slide_7 {
     background-color: rgba(239, 202, 136, 1);
 }
-.brands-slider-wrapper .swiper-slide:nth-child(10) {
+.brands-slider-wrapper .swiper-slide.slide_10 {
     background-color: rgba(6, 193, 103, 1);
 }
-.brands-slider-wrapper .swiper-slide:nth-child(11) {
+.brands-slider-wrapper .swiper-slide.slide_11 {
     background-color: rgba(226, 55, 68, 1);
 }
 
