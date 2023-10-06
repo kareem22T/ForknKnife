@@ -121,33 +121,33 @@
             <div class="team_wrapper">
                 <h3>Co-founder</h3>
                 <div class="team">
-                    <div class="person main_person">
+                    <div class="person main_person person-1">
                         <img src="./assets/imgs/team-1.png" alt="">
                         <div class="text">
                             Yasser Nasr Aldin
-                            <span>MCR Section</span>
+                            <span>Co-Founder & CEO</span>
                             <div class="social">
                                 <a href=""><i class="fa-brands fa-linkedin"></i></a>
                                 <a href=""><i class="fa-regular fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="person main_person">
+                    <div class="person main_person person-2">
                         <img src="./assets/imgs/team-2.png" alt="">
                         <div class="text">
-                            yaser M. Foad
-                            <span>MCR Manager</span>
+                            Mohamed Haroun
+                            <span>Co-Founder & Managing Partner</span>
                             <div class="social">
                                 <a href=""><i class="fa-brands fa-linkedin"></i></a>
                                 <a href=""><i class="fa-regular fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="person main_person">
+                    <div class="person main_person  person-3">
                         <img src="./assets/imgs/team-4.png" alt="">
                         <div class="text">
-                            Ismaeel Abdul’aziz
-                            <span>MCR Manager</span>
+                            Ahmed Arslan
+                            <span>Managing Partner</span>
                             <div class="social">
                                 <a href=""><i class="fa-brands fa-linkedin"></i></a>
                                 <a href=""><i class="fa-regular fa-envelope"></i></a>
@@ -208,14 +208,42 @@
                 <i class="fa fa-close"></i>
             </div>
             <hr>
-            <p>
-                Meet Yasser Nasr Aldin, the Co-founder and CEO of Fork N Knife. With a remarkable 18 years of experience in the technology domain, Yasser's expertise is a driving force behind our company's success.<br><br>
+            <p class="team-1">
+                Meet Yasser Nasr Aldin, the Co-founder and CEO of Fork N Knife. With a remarkable 18 years of experience in the technology domain, Yasser's expertise is a driving force behind our company's success.
+                <br>
+                <br>
 
-                Yasser brings a wealth of knowledge to the table, with 9 of those years dedicated to the dynamic world of cloud kitchens. His deep understanding of this emerging industry ensures that Fork N Knife is at the forefront of innovation, delivering exceptional solutions for our clients.<br><br>
+                Yasser brings a wealth of knowledge to the table, with 9 of those years dedicated to the dynamic world of cloud kitchens. His deep understanding of this emerging industry ensures that Fork N Knife is at the forefront of innovation, delivering exceptional solutions for our clients.
+                <br>
+                <br>
 
-                But Yasser's journey doesn't stop there. With 14 years of experience in the tech startup landscape, he has honed his skills in strategy development, financial planning, fundraising, startups acquisitions, and due diligence processes. Yasser's strategic vision and ability to navigate complex financial landscapes have been instrumental in Fork N Knife's growth and sustainability.<br><br>
+                But Yasser's journey doesn't stop there. With 14 years of experience in the tech startup landscape, he has honed his skills in strategy development, financial planning, fundraising, startups acquisitions, and due diligence processes. Yasser's strategic vision and ability to navigate complex financial landscapes have been instrumental in Fork N Knife's growth and sustainability.
+                <br>
+                <br>
 
-                As our CEO, Yasser is committed to delivering excellence, driving innovation, and ensuring that every client's needs are not only met but exceeded. With his leadership, we are dedicated to providing cutting-edge solutions that make a difference in the technology and cloud kitchen sectors.<br><br>
+                As our CEO, Yasser is committed to delivering excellence, driving innovation, and ensuring that every client's needs are not only met but exceeded. With his leadership, we are dedicated to providing cutting-edge solutions that make a difference in the technology and cloud kitchen sectors.
+            </p>
+            <p class="team-2">
+                Meet Mohamed Haroun, Co-founder & Managing Partner at [Fork N Knife]. With 25 years of experience in organizational development, governance, and process development, Mohamed is a cornerstone of our leadership team.
+                <br>
+                <br>
+
+                His deep-rooted experience ensures that every facet of [Fork N Knife] operates with the utmost integrity and accountability, adhering to the highest industry standards. Mohamed's dedication to process development has led to streamlined operations and enhanced client experiences at [Fork N Knife]
+                <br>
+                <br>
+
+                Mohamed's role as an advocate for international expansion within [Fork N Knife] has played a pivotal role in guiding our organization into new markets and opportunities, facilitating growth and success for our venture.
+            </p>
+            <p class="team-3">
+                Meet Ahmet Necip Arslan, as a Managing Partner of Fork N Knife, brings a wealth of international legal expertise and a dynamic entrepreneurial spirit to the table. His unique background in international law, corporate governance, and mergers and acquisitions sets him apart as a visionary leader capable of bridging the gap between the legal and business worlds.
+                <br>
+                <br>
+
+                Ahmet's journey towards his current role was shaped by his tenure at Baker McKenzie, a renowned international law firm. During his time there, he honed his skills and gained valuable experience navigating the complexities of international business. This experience has undoubtedly contributed to his ability to provide innovative solutions and ensure the success of Fork N Knife's international ventures under his guidance.
+                <br>
+                <br>
+
+                With his strong commitment to excellence and a deep understanding of both legal intricacies and business dynamics, Ahmet Necip Arslan is well-equipped to lead Fork N Knife towards continued success and growth in the international arena. His visionary leadership and passion for creating innovative solutions make him an invaluable asset to the company.
             </p>
         </div>
     </main>
@@ -300,10 +328,23 @@
 
     <script src="/assets/libs/jquery.js"></script>
     <script>
-        $('.person').on('click', function() {
-            $(this).find('.social').slideToggle()
-        })
+        if ($(window).width() <= 600)
+            $('.person').on('click', function() {
+                $(this).find('.social').slideToggle()
+            })
         $('.main_person').on('click', function() {
+            if ($(this).hasClass('person-1')) {
+                $('.team_pop_up p.team-1').css('display', 'block')
+                $('.team_pop_up p.team-1').siblings('p').css('display', 'none')
+            }
+            if ($(this).hasClass('person-2')) {
+                $('.team_pop_up p.team-2').css('display', 'block')
+                $('.team_pop_up p.team-2').siblings('p').css('display', 'none')
+            }
+            if ($(this).hasClass('person-3')) {
+                $('.team_pop_up p.team-3').css('display', 'block')
+                $('.team_pop_up p.team-3').siblings('p').css('display', 'none')
+            }
             $('.team_pop_up').fadeIn()
             $('.hide-content').fadeIn()
         })

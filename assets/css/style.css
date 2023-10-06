@@ -2078,6 +2078,7 @@ main {
     text-align: left;
     margin-top: 10px;
     color: rgba(38, 35, 52, 1);
+    display: none;
 }
 
 .team_pop_up hr {
