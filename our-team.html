@@ -200,9 +200,17 @@
 
         <div class="hide-content"></div>
         <div class="pop_up team_pop_up">
-            <h1>
+            <h1 class="team-1">
                 Yasser Nasr Aldin
-                <span>MCR Section</span>
+                <span>Co-Founder & CEO</span>
+            </h1>
+            <h1 class="team-2">
+                Mohamed Haroun
+                <span>Co-Founder & Managing Partner</span>
+            </h1>
+            <h1 class="team-3">
+                Ahmed Arslan
+                <span>Managing Partner</span>
             </h1>
             <div class="close">
                 <i class="fa fa-close"></i>
@@ -336,14 +344,20 @@
             if ($(this).hasClass('person-1')) {
                 $('.team_pop_up p.team-1').css('display', 'block')
                 $('.team_pop_up p.team-1').siblings('p').css('display', 'none')
+                $('.team_pop_up h1.team-1').css('display', 'flex')
+                $('.team_pop_up h1.team-1').siblings('h1').css('display', 'none')
             }
             if ($(this).hasClass('person-2')) {
                 $('.team_pop_up p.team-2').css('display', 'block')
                 $('.team_pop_up p.team-2').siblings('p').css('display', 'none')
+                $('.team_pop_up h1.team-2').css('display', 'flex')
+                $('.team_pop_up h1.team-2').siblings('h1').css('display', 'none')
             }
             if ($(this).hasClass('person-3')) {
                 $('.team_pop_up p.team-3').css('display', 'block')
                 $('.team_pop_up p.team-3').siblings('p').css('display', 'none')
+                $('.team_pop_up h1.team-3').css('display', 'flex')
+                $('.team_pop_up h1.team-3').siblings('h1').css('display', 'none')
             }
             $('.team_pop_up').fadeIn()
             $('.hide-content').fadeIn()
