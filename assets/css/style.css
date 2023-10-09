@@ -1611,7 +1611,7 @@ footer .bottom ul {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99999999999999;
+    z-index: 999999999;
     display: none;
 }
 
@@ -2441,3 +2441,31 @@ section:not(.how) {
     margin-bottom: 2.5rem;
 }
 
+#errors {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - 1.25rem * 2);
+    gap: 1rem;
+    z-index: 99999999999999999999;
+
+}
+
+#errors>* {
+    width: 100%;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#errors .error {
+    background: #e41749;
+}
+
+#errors .success {
+    background: #12c99b;
+}
