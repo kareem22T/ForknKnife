@@ -18,7 +18,7 @@ $('#register_form').on('submit', function (e) {
     const form = document.getElementById("register_form");
 
     let title = "New Registeration"
-    let type =  form.getElementsByTagName('type').value == 1 ? "Kitchen owner" : "Brand owner"
+    let type =  form.getElementsByTagName('type').value == '1' ? "Kitchen owner" : "Brand owner"
     let name =  form.querySelector("#name").value
     let email =  form.querySelector("#email").value
     let website =  form.querySelector("#website").value
