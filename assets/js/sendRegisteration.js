@@ -18,7 +18,16 @@ $('#register_form').on('submit', function (e) {
     const form = document.getElementById("register_form");
 
     let title = "New Registeration"
-    let type =  form.getElementsByTagName('type').value == '1' ? "Kitchen owner" : "Brand owner"
+
+    let radioButtons = document.querySelectorAll('input[name="type"]');
+    let selectedValue;
+    for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+        selectedValue = radioButtons[i].value;
+        break; // exit the loop once a checked value is found
+    }
+    }
+    let type = selectedValue == '1' ? "kitchen Owner" : "brand Owner";
     let name =  form.querySelector("#name").value
     let email =  form.querySelector("#email").value
     let website =  form.querySelector("#website").value
