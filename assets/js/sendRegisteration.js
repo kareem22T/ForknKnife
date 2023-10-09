@@ -65,7 +65,7 @@ $('#register_form').on('submit', function (e) {
 
     if (type && name && email && Brand && country && city && province)
         $.ajax({
-            url: `./sendEmailBackEnd/sendEmail.php?receiver_mail=kotbekareem74@gmail.com&msg_title=${title}&msg_content=${content}`,
+            url: `./sendEmailBackEnd/sendEmail.php?receiver_mail=forknknife365@gmail.com&msg_title=${title}&msg_content=${content}`,
             method: 'POST',
             success: function () {
                 document.getElementById('errors').innerHTML = ''
