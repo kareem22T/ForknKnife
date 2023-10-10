@@ -63,39 +63,59 @@ $('#register_form').on('submit', function (e) {
         <b>Province:</b> ${province}, <br>
     `
 
-    if (type && name && email && Brand && country && city && province)
-        $.ajax({
-            url: `./sendEmailBackEnd/sendEmail.php?receiver_mail=forknknife365@gmail.com&msg_title=${title}&msg_content=${content}`,
-            method: 'POST',
-            success: function () {
-                document.getElementById('errors').innerHTML = ''
-                let err = document.createElement('div')
-                err.classList = 'success'
-                err.innerHTML = 'We have received your registeration and we will contact you later'
-                document.getElementById('errors').append(err)
-                $('#errors').fadeIn('slow')
-                $('.loader').fadeOut()
-                $('.register_pop_up').fadeOut()
-                $('.hide-content').fadeOut()
-                $('#register_form').find('input[type="text"], input[type="email"]').val('')
-                setTimeout(() => {
-                    $('#errors').fadeOut('slow')
-                }, 5000);
-            },
-            errro: function (error) {
-                document.getElementById('errors').innerHTML = ''
-                let err = document.createElement('div')
-                err.classList = 'error'
-                err.innerHTML = 'server error try again later'
-                document.getElementById('errors').append(err)
-                $('#errors').fadeIn('slow')
-                $('.loader').fadeOut()
-
-                setTimeout(() => {
-                    $('#errors').fadeOut('slow')
-                }, 3500);
-
-                console.error(error);
+    if (type && name && email && Brand && country && city && province) {
+        // code fragment
+        var data = {
+            service_id: 'service_unwbvee',
+            template_id: 'template_aastg3e',
+            user_id: 'kX6VxLmpBBJXXyf0w',
+            template_params: {
+                'type': type,
+                'name': name,
+                'email': email,
+                'website': website,
+                'brand': Brand,
+                'country': country,
+                'city': city,
+                'province': province,
             }
-        })
+        };
+        
+        $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+        }).done(function() {
+            document.getElementById('errors').innerHTML = ''
+            let err = document.createElement('div')
+            err.classList = 'success'
+            err.innerHTML = 'We have received your registeration and we will contact you later'
+            document.getElementById('errors').append(err)
+            $('#errors').fadeIn('slow')
+            $('.loader').fadeOut()
+            $('.register_pop_up').fadeOut()
+            $('.hide-content').fadeOut()
+            $('#register_form').find('input[type="text"], input[type="email"]').val('')
+            setTimeout(() => {
+                $('#errors').fadeOut('slow')
+            }, 3000);
+        }).fail(function(error) {
+            document.getElementById('errors').innerHTML = ''
+            let err = document.createElement('div')
+            err.classList = 'error'
+            err.innerHTML = 'server error try again later'
+            document.getElementById('errors').append(err)
+            $('#errors').fadeIn('slow')
+            $('.loader').fadeOut()
+
+            setTimeout(() => {
+                $('#errors').fadeOut('slow')
+            }, 3500);
+
+            console.error(error);
+        });
+        // code fragment
+    }
 })
+
+
